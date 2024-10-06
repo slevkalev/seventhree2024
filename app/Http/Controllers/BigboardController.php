@@ -21,23 +21,8 @@ class BigboardController extends Controller
         $currentUser = Auth::user() ?? "";
         $weeks = Helper::schedule();
         $weekId = Helper::get_week_id($today, $weeks);
-        $numberOfGames = $weeks[$weekId]['nog'];
-        $games = Game::all();
-        $picks = Pick::all();
-        $teams = Team::all();
-        $maxPoints = Helper::getMaxPointsInWeek($numberOfGames);
-        $users = User::select('id', 'first_name', 'last_name')->get();
 
-
-        return view('football.bigboard.index', [
-            'games' => $games,
-            'picks' => $picks,
-            'teams' => $teams,
-            'users' => $users,
-            'currentUser' => $currentUser,
-            'maxPoints' => $maxPoints,
-            'numberOfGames' => $numberOfGames
-        ]);
+        return $this->show($weekId);
 
     }
 
@@ -47,7 +32,8 @@ class BigboardController extends Controller
         $today = Carbon::now()->format('m/d/Y');
         $currentUser = Auth::user() ?? "";
         $weeks = Helper::schedule();
-        $weekId = Helper::get_week_id($today, $weeks);
+        // $weekId = Helper::get_week_id($today, $weeks);
+        $weekId = $week;
         $numberOfGames = $weeks[$week - 1]['nog'];
         $games = Game::all();
         $picks = Pick::all();

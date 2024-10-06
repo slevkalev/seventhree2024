@@ -18,7 +18,7 @@
 
             <a href="/dashboard/games/{{ $game['id'] }}" class="">
 
-                <div>Game: {{ $game->id }} Week: {{ $game->week }} Date: {{ $game->game_date }} Time: {{ $game->game_time }} {{ $game->away_team()->pluck('city')->first() }} {{ $game->away_team()->pluck('name')->first() }} at {{ $game->home_team()->pluck('city')->first() }} {{ $game->home_team()->pluck('name')->first() }}</div>
+                <div>Game: {{ $game->id }} Week: {{ $game->week }} Date: {{ $game->game_date }} Time: {{ $game->game_time }} {{ $game->awayTeam()->pluck('city')->first() }} {{ $game->awayTeam()->pluck('name')->first() }} at {{ $game->homeTeam()->pluck('city')->first() }} {{ $game->homeTeam()->pluck('name')->first() }}</div>
             </a>
 
 

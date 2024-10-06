@@ -13,10 +13,11 @@ return new class extends Migration
     {
         Schema::create('picks', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(\App\Models\User::class, 'user');
-            $table->foreignIdFor(\App\Models\Game::class, 'game');
-            $table->foreignIdFor(\App\Models\Team::class, 'pick');
+            $table->foreignIdFor(\App\Models\User::class, 'user')->constrained();
+            $table->foreignIdFor(\App\Models\Game::class, 'game')->constrained();
+            $table->integer('pick');
             $table->integer('points');
+            $table->unique(['user_id', 'game_id']);
             $table->timestamps();
         });
     }

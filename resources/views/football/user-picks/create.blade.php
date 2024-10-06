@@ -10,18 +10,18 @@
 
         <div class="pick-info">
             <label for="away_team">
-                <img class="team-logo" src="/images/logos/{{ $game->away_team()->pluck('image')->first()}}" alt="{{ $game->away_team()->pluck('image')->first()}}">
-                <span class="team-shortname">{{ $game->away_team()->pluck('short_name')->first() }}</span>
+                <img class="team-logo" src="/images/logos/{{ $game->awayTeam()->pluck('image')->first()}}" alt="{{ $game->awayTeam()->pluck('image')->first()}}">
+                <span class="team-shortname">{{ $game->awayTeam()->pluck('short_name')->first() }}</span>
             </label>
-            <input class="hidden-checkbox" type="checkbox" id="away_team" name="pick" value="{{ $game->away_team()->pluck('id')->first() }}" />
+            <input class="hidden-checkbox" type="checkbox" id="away_team" name="pick" value="{{ $game->awayTeam()->pluck('id')->first() }}" />
 
             <p>@</p>
 
             <label for="home_team">
-                <img class="team-logo" src="/images/logos/{{ $game->home_team()->pluck('image')->first()}}" alt="{{ $game->home_team()->pluck('image')->first()}}">
-                <span class="team-shortname">{{ $game->home_team()->pluck('short_name')->first() }}</span>
+                <img class="team-logo" src="/images/logos/{{ $game->homeTeam()->pluck('image')->first()}}" alt="{{ $game->homeTeam()->pluck('image')->first()}}">
+                <span class="team-shortname">{{ $game->homeTeam()->pluck('short_name')->first() }}</span>
             </label>
-            <input class="hidden-checkbox" type="checkbox" id="home_team" name="pick" value="{{ $game->home_team()->pluck('id')->first() }}" />
+            <input class="hidden-checkbox" type="checkbox" id="home_team" name="pick" value="{{ $game->homeTeam()->pluck('id')->first() }}" />
         </div>
 
         <p>You Picked</p>
@@ -55,7 +55,7 @@
                 awayTeamCheckbox.checked = false;
                 pickImage.innerHTML = ""
                 const awayImage = document.createElement('img');
-                awayImage.src = "/images/logos/{{ $game->home_team()->pluck('image')->first()}}"
+                awayImage.src = "/images/logos/{{ $game->homeTeam()->pluck('image')->first()}}"
                 awayImage.classList.add('team-logo')
                 pickImage.appendChild(awayImage)
 
@@ -68,7 +68,7 @@
                 homeTeamCheckbox.checked = false;
                 pickImage.innerHTML = ""
                 const homeImage = document.createElement('img');
-                homeImage.src = "/images/logos/{{ $game->away_team()->pluck('image')->first()}}"
+                homeImage.src = "/images/logos/{{ $game->awayTeam()->pluck('image')->first()}}"
                 homeImage.classList.add('team-logo')
                 pickImage.appendChild(homeImage)
             }
@@ -95,7 +95,18 @@
         }
 
         const selectElement = document.getElementById('points-select');
+
+
         selectElement.insertAdjacentHTML('beforeend', `${createSelectOptions({{ $numberOfGames }}, {{ $picked }})}`);
+
+    </script>
+    <script>
+        //display logged in user under the header
+        const currentUser = @json($user);
+
+        const header = document.querySelector('.header')
+
+        header.insertAdjacentHTML('afterend', `<div class="logged-user">${currentUser.first_name?? ""} ${currentUser.last_name?? ""}</div>`)
 
     </script>
 </x-layout_dash>

@@ -3,7 +3,11 @@
         Edit Game
     </x-slot:heading>
 
-    <h2>Game: {{ $game->id }} {{ $game->home_team()->pluck('city')->first() }} {{ $game->home_team()->pluck('name')->first() }} at {{ $game->id }} {{ $game->away_team()->pluck('city')->first() }} {{ $game->away_team()->pluck('name')->first() }}</h2>
+    <nav>
+        <a href="/dashboard/games">Games</a>
+    </nav>
+
+    <h2>Game: {{ $game->id }} {{ $game->awayTeam()->pluck('city')->first() }} {{ $game->awayTeam()->pluck('name')->first() }} at {{ $game->id }} {{ $game->homeTeam()->pluck('city')->first() }} {{ $game->homeTeam()->pluck('name')->first() }}</h2>
 
     <form method="POST" action="/dashboard/games/{{ $game->id }}">
         @csrf
@@ -115,7 +119,7 @@
                 </div>
 
                 <div class="">
-                    <label for="home_pts" class="">Home Pts</label>
+                    <label for="home_pts" class="">{{ $game->homeTeam()->pluck('city')->first() }}</label>
                     <div class="">
                         <div class="">
                         <input
@@ -135,7 +139,7 @@
                 </div>
 
                 <div class="">
-                    <label for="away_pts" class="">Home Pts</label>
+                    <label for="away_pts" class="">{{ $game->awayTeam()->pluck('city')->first() }}</label>
                     <div class="">
                         <div class="">
                         <input
@@ -155,7 +159,7 @@
                 </div>
 
                 <div class="">
-                    <label for="game_status" class="">Home Pts</label>
+                    <label for="game_status" class="">Stauts</label>
                     <div class="">
                         <div class="">
                         <input
@@ -175,7 +179,7 @@
                 </div>
 
                 <div class="">
-                    <label for="locked" class="">Home Pts</label>
+                    <label for="locked" class="">Locked</label>
                     <div class="">
                         <div class="">
                         <input
@@ -198,16 +202,16 @@
         </div>
     </div>
 
-    <div class="">
+    <div class="flex">
         <div class="">
-            <button form="delete-form" class="">Delete</button>
+            <x-form-button form="delete-form" class="" disabled>Delete</x-form-button>
+
+
+            <a href="/dashboard/games/{{ $game->id }}" class="link">Cancel</a>
+
+            <x-form-button type="submit" class="">Update</x-form-button>
         </div>
-        <div class="">
-            <a href="/dashboard/games/{{ $game->id }}" class="">Cancel</a>
-            <div>
-                <button type="submit" class="">Update</button>
-            </div>
-        </div>
+
     </div>
     </form>
 

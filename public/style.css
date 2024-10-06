@@ -37,6 +37,13 @@ main{
     justify-content: center;
 }
 
+
+input{
+    padding: .5rem 1rem;
+    margin-bottom: 1rem;
+}
+
+
 .logged-user{
     background-color: #00007388;
     color:white;
@@ -117,6 +124,21 @@ nav{
     border: 2px solid white;
 }
 
+.nav-block{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1em;
+}
+
+.nav-block-link{
+    color:#fff;
+    text-shadow: 1px 1px 3px black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
 .button{
     padding: .5em 1em;
     background-color: orange;
@@ -143,18 +165,63 @@ nav{
     color: #fff;
 }
 
+.week-nav{
+    margin: 2em 0;
+}
+
 
 /* football/games styles */
 
 #games{
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 190px 190px 190px;
+    margin-top: 2em;
 }
-.game{
 
-    margin-bottom: 1em;
-    padding: .5em 1em;
+.game{
+    padding: 1em 1em;
     border: 1px solid white;
+    text-decoration: none;
+    text-shadow: 1px 1px 3px black;
+    color: white;
+}
+
+.game-team{
+    display: flex;
+    gap: 1em;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.game-team-name{
+    min-width: 3ch;
+    font-weight: 600;
+
+}
+
+.game-points{
+    width: 3ch;
+    text-align: right;
+    font-weight: 600;
+}
+
+.game-date{
+    width: 100%;
+    text-align: center;
+    font-size: small;
+}
+
+.checkmark{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    margin-top: 1em;
+    border: 1px solid white;
+}
+
+.space{
+    min-height: 24px;
 }
 
 
@@ -218,8 +285,8 @@ nav{
 }
 
 .team-logo{
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
     object-fit: cover;
 }
 
@@ -327,9 +394,7 @@ nav{
     border: 1px solid #00007350
 }
 
-/* .data-pick-span{
-    font-size: medium;
-} */
+
 
 .data-name-span{
     min-width: 12ch;
@@ -341,6 +406,76 @@ nav{
 }
 
 
+
+
+
+/* #### User-pick styles */
+
+#user-picks .pick-info{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    border: 1px white solid;
+    padding: 1em;
+}
+
+
+#user-picks a{
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+}
+
+.picked-banner{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    width: 100%;
+    background-color: #000073;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: .25rem 1rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.picked, .points{
+    font-size: 1.3rem;
+    padding: .25rem 1rem;
+}
+
+.team-div{
+    display: flex;
+    align-items: center;
+    gap:1em;
+    width:250px;
+}
+
+.awayteam, .hometeam{
+    width: 120px;
+    font-weight: 700;
+    font-size: 1.5rem;
+
+}
+.score{
+    width: 50px;
+    text-align: right;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.game-details{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+
 .win{
     background-color: greenyellow;
 }
@@ -348,3 +483,176 @@ nav{
 .loss{
     background-color: red;
 }
+
+
+
+/* user-picks styles */
+
+.x-button{
+    border:none;
+    outline:none;
+    background-color: rgb(166, 166, 235);
+    cursor: pointer;
+}
+.x-button:before{
+    content: "delete";
+    position:absolute;
+    left:25px;
+    top:-10px;
+    border: 1px solid black;
+    background-color: white;
+    padding: 3px 6px;
+    display: none;
+}
+
+.x-button:hover:before{
+    display: block;
+}
+
+
+.pickinfo{
+    display:flex;
+    flex-direction: column;
+}
+
+.pickinfo-space{
+    min-width: 56px;
+}
+
+.pickinfo-game{
+    background-color:#00007388;
+    border: 1px solid white;
+    padding: .5em 1em;
+}
+
+.pickinfo-div {
+    display: grid;
+    grid-template-columns: 56px auto 56px;
+    align-items: center;
+    justify-items: center; /* Center items horizontally */
+}
+
+.pickinfo-details {
+    display: flex; /* Change to flexbox */
+    align-items: center; /* Center items horizontally */
+    text-align: center;
+    gap:1em;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px black;
+}
+
+.pickinfo-pick, .pickinfo-points{
+    text-align: left;
+    min-width: 3ch;
+}
+
+.pickinfo-edit{
+
+}
+
+.pickinfo-delete{
+
+}
+
+.pickinfo-link{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: .5em 1em;
+}
+
+.pickinfo-link:before{
+    content: "edit";
+    font-size: smaller;
+    position:absolute;
+    left:50px;
+    top:-10px;
+    border: 1px solid black;
+    background-color: white;
+    padding: 3px 6px;
+    display: none;
+}
+
+.pickinfo-link:hover:before{
+    display: block;
+}
+
+/* Leaderboard Styles */
+
+.leaderboard {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    flex-direction: column;
+    /* width: 98%; */
+    overflow: hidden;
+    overflow-x: scroll;
+    height: fit-content;
+  }
+
+
+.board {
+    display: flex;
+
+    overflow: hidden;
+    overflow-x: scroll;
+  }
+
+  .lb-left {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: sticky;
+    z-index: 5;
+    left: 0;
+    font-size: 0.7rem;
+    background-color: #444;
+    border-right: 1px solid #eeeeee50;
+  }
+
+  .lb-right {
+    display: flex;
+    flex-direction: column;
+    /* width: 1800px; */
+    z-index: 1;
+    font-size: 0.7rem;
+  }
+
+  .lb-head-left,
+  .lb-row-left {
+    display: flex;
+    width: 150px;
+    z-index: 20;
+    position: sticky;
+    left: 0;
+    background-color: #444;
+  }
+
+  .lb-row-left,
+  .lb-row-right {
+    padding: 0.5rem 0;
+  }
+
+  .lb-head-right,
+  .lb-row-right {
+    display: flex;
+    z-index: 10;
+  }
+
+  .headname,
+  .user-name {
+    min-width: 10em;
+    padding-left: 0.5rem;
+  }
+
+  .headwk,
+  .lb-wk {
+    min-width: 8ch;
+    text-align: center;
+  }
+
+  .lb-head-left,
+  .lb-head-right {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eeeeee50;
+  }

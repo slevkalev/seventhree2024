@@ -4,6 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+
 
 
 class Game extends Model
@@ -12,18 +15,23 @@ class Game extends Model
 
     protected $guarded = [];
 
-    public function home_team() {
+    public function homeTeam():BelongsTo
+    {
 
         return $this->belongsTo(Team::class, 'home_team');
     }
 
-    public function away_team() {
+    public function awayTeam():BelongsTo
+    {
         return $this->belongsTo(Team::class, 'away_team');
     }
 
-    public function picks() {
-        return $this->hasMany(Pick::class, 'game', 'id');
+    public function picks():HasMany
+    {
+        return this->hasMany(Pick::class, 'game');
     }
+
+
 
     public function winner() {
 

@@ -10,10 +10,9 @@ use App\Http\Controllers\GamesByWeekController;
 use App\Http\Controllers\UserPicksController;
 use App\Http\Controllers\LeaderboardController;
 use App\Http\Controllers\BigboardController;
+use App\Http\Controllers\HomeController;
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [HomeController::class, 'home']);
 
 
 //login routes
@@ -26,13 +25,11 @@ Route::get('/register', [RegisteredUserController::class, 'create']);
 Route::post('/register', [RegisteredUserController::class, 'store']);
 
 
-
-
-
-
+//leaderboard routes
 Route::get('/leaderboard', [LeaderboardController::class, 'index']);
 
 
+//bigboard routes
 Route::get('/bigboard', [BigboardController::class, 'index']);
 Route::get('/bigboard/{week}', [BigboardController::class, 'show']);
 
@@ -44,7 +41,7 @@ Route::get('/games/{week}', [GamesByWeekController::class, 'show']);
 //user picks - create, edit, update, delete a pick
 Route::get('/user-picks', [UserPicksController::class, 'index']);
 Route::get('/user-picks/create/{game}', [UserPicksController::class, 'create']);
-Route::get('/user-picks/{game}', [UserPicksController::class, 'show']);
+Route::get('/user-picks/{week}', [UserPicksController::class, 'show']);
 Route::post('/user-picks', [UserPicksController::class, 'store'])
     ->middleware('auth');
 

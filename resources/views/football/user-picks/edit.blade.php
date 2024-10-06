@@ -5,23 +5,24 @@
 
     <h1 class="center pad1">Edit Pick for Game {{  $pick->game }} </h1>
 
-    <form class="border1" id="pick-form" method="POST" action="/user-picks">
+    <form class="border1" id="pick-form" method="POST" action="/user-picks/{{ $pick->id }}">
         @csrf
+        @method('PATCH')
 
         <div class="pick-info">
             <label for="away_team">
-                <img class="team-logo" src="/images/logos/{{ $game->first()->away_team()->pluck('image')->first() }}" alt="">
-                <span class="team-shortname">{{ $game->first()->away_team()->pluck('short_name')->first() }}</span>
+                <img class="team-logo" src="/images/logos/{{ $game->awayTeam()->pluck('image')->first() }}" alt="">
+                <span class="team-shortname">{{ $game->awayTeam()->pluck('short_name')->first() }}</span>
             </label>
-            <input class="hidden-checkbox" type="checkbox" id="away_team" name="pick" value="{{ $game->first()->away_team }}" />
+            <input class="hidden-checkbox" type="checkbox" id="away_team" name="pick" value="{{ $game->away_team }}" />
 
             <p>@</p>
 
             <label for="home_team">
-                <img class="team-logo" src="/images/logos/{{ $game->first()->home_team()->pluck('image')->first() }}" alt="">
-                <span class="team-shortname">{{ $game->first()->home_team()->pluck('short_name')->first() }}</span>
+                <img class="team-logo" src="/images/logos/{{ $game->homeTeam()->pluck('image')->first() }}" alt="">
+                <span class="team-shortname">{{ $game->homeTeam()->pluck('short_name')->first() }}</span>
             </label>
-            <input class="hidden-checkbox" type="checkbox" id="home_team" name="pick" value="" />
+            <input class="hidden-checkbox" type="checkbox" id="home_team" name="pick" value="{{ $game->home_team }}" />
         </div>
 
         <p>You Picked</p>
@@ -31,6 +32,7 @@
             <label for="points-select">Wager</label>
             <select name="points" id="points-select">
                 <option value="">Choose wager</option>
+                <option value="{{ $pick->points }}" selected>{{ $pick->points }}</option>
 
             </select>
 
@@ -70,12 +72,13 @@
         const pickImage = document.querySelector('.pick-image')
 
 
+
         homeTeamCheckbox.addEventListener('change', function() {
             if (this.checked) {
                 awayTeamCheckbox.checked = false;
                 pickImage.innerHTML = ""
                 const awayImage = document.createElement('img');
-                awayImage.src = "/images/logos/{{ $game->first()->home_team()->pluck('image')->first() }}"
+                awayImage.src = "/images/logos/{{ $game->homeTeam()->pluck('image')->first() }}"
                 awayImage.classList.add('team-logo')
                 pickImage.appendChild(awayImage)
 
@@ -88,7 +91,7 @@
                 homeTeamCheckbox.checked = false;
                 pickImage.innerHTML = ""
                 const homeImage = document.createElement('img');
-                homeImage.src = "/images/logos/{{ $game->first()->away_team()->pluck('image')->first() }}"
+                homeImage.src = "/images/logos/{{ $game->awayTeam()->pluck('image')->first() }}"
                 homeImage.classList.add('team-logo')
                 pickImage.appendChild(homeImage)
             }

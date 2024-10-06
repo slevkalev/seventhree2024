@@ -2,36 +2,24 @@
     <x-slot:heading>
         Games
     </x-slot:heading>
+    <x-nav-block></x-nav-block>
 
-    <nav>
-        <span>Week</span>
-        <a href="/games/1">1</a>
-        <a href="/games/2">2</a>
-        <a href="/games/3">3</a>
-        <a href="/games/4">4</a>
-        <a href="/games/5">5</a>
-        <a href="/games/6">6</a>
-        <a href="/games/7">7</a>
-        <a href="/games/8">8</a>
-        <a href="/games/9">9</a>
-        <a href="/games/10">10</a>
-        <a href="/games/11">11</a>
-        <a href="/games/12">12</a>
-        <a href="/games/13">13</a>
-        <a href="/games/14">14</a>
-        <a href="/games/15">15</a>
-        <a href="/games/16">16</a>
-        <a href="/games/17">17</a>
-        <a href="/games/18">18</a>
-    </nav>
+    <x-nav-week></x-nav-week>
 
 
-    <h2>Games Page!!!</h2>
+
+    <h2>Games for Week {{ $week }}</h2>
     <section id="games">
     @foreach ($games as $game)
         <a href="/user-picks/create/{{ $game->id }}" class="game">
-            <div>{{ $game->away_team()->pluck('short_name')->first() }} {{ $game->away_pts }}</div>
-            <div>{{ $game->home_team()->pluck('short_name')->first() }} {{ $game->home_pts }}</div>
+            <div>{{ $game->awayTeam()->pluck('short_name')->first() }} {{ $game->away_pts }} </div>
+            <div>{{ $game->homeTeam()->pluck('short_name')->first() }} {{ $game->home_pts }}</div>
+
+            @if($picks->contains($game->id))
+            <div class="checkmark">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="m381-240 424-424-57-56-368 367-169-170-57 57 227 226Zm0 113L42-466l169-170 170 170 366-367 172 168-538 538Z"/></svg>
+            </div>
+            @endif
         </a>
     @endforeach
     </section>

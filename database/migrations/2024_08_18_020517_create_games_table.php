@@ -16,8 +16,8 @@ return new class extends Migration
             $table->integer('week');
             $table->string('game_date');
             $table->string('game_time');
-            $table->ForeignId('home_team')->references('id')->on('teams');
-            $table->ForeignId('away_team')->references('id')->on('teams');
+            $table->foreignId('home_team')->references('id')->on('teams');
+            $table->foreignId('away_team')->references('id')->on('teams');
             $table->string('home_pts');
             $table->string('away_pts');
             $table->string('game_status');

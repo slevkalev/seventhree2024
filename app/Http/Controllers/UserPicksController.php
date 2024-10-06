@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Pick;
 use App\Models\Game;
+use App\Models\Team;
 use Carbon\Carbon;
 use App\Helper\Helper;
 use Illuminate\Support\Facades\Auth;
@@ -14,29 +15,11 @@ class UserPicksController extends Controller
 {
     public function index() {
 
-        //paginate by games this week
-        //check to see if there are any picks made for this game by this user
-        //if no pick exists already display game with action=/create
-        //if a pick exists already dispgame with action=/update
-
-
         $today = Carbon::now()->format('m/d/Y');
-        $currentUser = Auth::user();
         $weeks = Helper::schedule();
         $weekId = Helper::get_week_id($today, $weeks);
-        $games = Game::where('week', $weekId)->get();
-        // $picks = Pick::where('user', $currentUser)
-        //     -where('game', 2)
-        //     ->get();
 
-
-
-        return view('football.user-picks.index', [
-            // 'picks' => $picks,
-            'games' => $games,
-            'today' => $today,
-            'currentWeek' => $weekId
-        ]);
+        return $this->show($weekId);
 
     }
 
@@ -47,15 +30,19 @@ class UserPicksController extends Controller
         }
 
         if($game->locked) {
-            return redirect('/user-picks');
+            return redirect('user-picks/'.$game->week);
         }
+
+
 
         $today = Carbon::now()->format('m/d/Y');
         $currentUser = Auth::user();
         $weeks = Helper::schedule();
-        $weekId = Helper::get_week_id($today, $weeks);
+        // $weekId = Helper::get_week_id($today, $weeks);
+        $weekId = $game->week;
         $numberOfGames = $weeks[$weekId-1]['nog'];
 
+        //Returns an array of point values already selected by this user this week.
         function getUserPointsForWeek($userId, $week) {
             return Pick::select('picks.points')
                 ->join('games', 'picks.game', '=', 'games.id')
@@ -66,6 +53,7 @@ class UserPicksController extends Controller
                 ->toArray();
         }
 
+        //Returns an array of game id values for each pick made this week.
         function getUserGamesPickedForWeek($userId, $week) {
             return Pick::select('picks.game')
                 ->join('games', 'picks.game', '=', 'games.id')
@@ -79,14 +67,16 @@ class UserPicksController extends Controller
 
         $gamesPicked = getUserGamesPickedForWeek($currentUser->id, $weekId);
 
+        //If the pick has already been made for this game then redirect to edit the pick rather than create a new pick.
         if(in_array($game->id, $gamesPicked)){
             $pick = Pick::select('id')
             ->where('user', $currentUser->id)
             ->where('game', $game->id);
 
-            return redirect('/user-picks/'. $pick->pluck('id')->first() . '/edit');
+            return redirect('user-picks/'. $pick->pluck('id')->first() .'/edit');
         }
 
+        // this instance of picked array is used to create the selection options in the view.
         $picked =  json_encode(getUserPointsForWeek($currentUser->id, $weekId));
 
 
@@ -102,8 +92,35 @@ class UserPicksController extends Controller
     }
 
 
-    public function show(Pick $pick){
-        dd("hello pick");
+    public function show($week){
+
+        if(Auth::guest()){
+            return redirect('/login');
+        }
+
+        $today = Carbon::now()->format('m/d/Y');
+        $currentUser = Auth::user() ?? "";
+        $userId = Auth::id() ?? "";
+        $today = Carbon::now()->format('m/d/Y');
+        $weeks = Helper::schedule();
+        $gamesThisWeek = Game::where('week', $week)->get();
+
+        $picks = $currentUser->picks()->with(['game'])
+        ->whereHas('game', function ($query) use ($week){
+            $query->where('week', $week);
+        })
+        ->orderBy('points', 'desc')
+        ->get();
+        $picks->load('game.homeTeam', 'game.awayTeam');
+
+        return view('football.user-picks.show',[
+            'user'=>$currentUser,
+            'today'=>$today,
+            'week'=>$week,
+            'picks'=>$picks
+
+
+        ]);
     }
 
 
@@ -131,21 +148,20 @@ class UserPicksController extends Controller
 
         Gate::authorize('edit-pick', $pick);
 
-        $game = Game::where('id', $pick->game)->get();
+        //retrieve game info for the pick to edit
+        $game = Game::where('id', $pick->game)->first();
 
 
 
-        if($game[0]['locked'] == 1) {
+        if($game['locked'] == 1) {
             return redirect('/user-picks');
         }
 
+        $pick_week = $game->week;
         $today = Carbon::now()->format('m/d/Y');
         $currentUser = Auth::user();
         $weeks = Helper::schedule();
-        $weekId = Helper::get_week_id($today, $weeks);
-        $numberOfGames = $weeks[$weekId-1]['nog'];
-
-
+        $numberOfGames = $weeks[$pick_week-1]['nog'];
 
 
 
@@ -159,7 +175,8 @@ class UserPicksController extends Controller
                 ->toArray();
         }
 
-        $picked =  json_encode(getUserPointsForWeek($currentUser->id, $weekId));
+        $picked =  json_encode(getUserPointsForWeek($currentUser->id, $pick_week));
+
 
 
         return view('football.user-picks.edit', [
@@ -168,12 +185,16 @@ class UserPicksController extends Controller
             'pick' => $pick,
             'numberOfGames' => $numberOfGames,
             'picked' => $picked
-
         ]);
+
+
     }
 
 
     public function update(Pick $pick) {
+
+        $week = $pick->game()->pluck('week')->first();
+
         request()->validate([
             'pick'=>['required'],
             'points'=>['required']
@@ -184,7 +205,9 @@ class UserPicksController extends Controller
             'points'=>request('points')
         ]);
 
-        return redirect('/user-picks');
+
+
+        return redirect('/user-picks/'.$week);
     }
 
 
