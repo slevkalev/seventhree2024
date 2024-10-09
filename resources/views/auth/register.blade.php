@@ -63,7 +63,7 @@
     </div>
   </div>
 
-  <div class="">
+  <div class="button-div">
     <a href="/" class="">Cancel</a>
     <x-form-button>Register</x-form-button>
   </div>

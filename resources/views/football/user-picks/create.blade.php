@@ -41,7 +41,7 @@
     </form>
 
     <div class="bottom-div">
-        <a href="/user-picks" class="cancel-button">Cancel</a>
+        <a href="/games" class="cancel-button">Cancel</a>
     </div>
 
     <script>

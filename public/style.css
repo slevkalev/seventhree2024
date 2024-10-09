@@ -1,230 +1,287 @@
-*, *:before, *:after{
-    box-sizing: border-box;
+/* General styles */
+
+body {
+    font-family: 'Kanit', sans-serif;
+    margin: 0;
     padding: 0;
-    margin:0;
+    background-color: #f4f4f4;
+    min-width:320px;
 }
 
-html{
-    background-color: #ccc;
-    font-size: 16px;
-    font-family: "Roboto", sans-serif;
-}
-
-.hide{
-    display: none;
-}
-
-.center{
-    text-align: center;
-}
-
-.pad1{
-    padding: 1em;
-}
-
-.border1{
-    border: 1px solid #000073;
-}
-
-body{
-    background-color: rgb(166, 166, 235);
-    color:#ccc;
-
-}
-
-main{
-    display: flex;
-    justify-content: center;
-}
-
-
-input{
-    padding: .5rem 1rem;
-    margin-bottom: 1rem;
-}
-
-
-.logged-user{
-    background-color: #00007388;
-    color:white;
-    padding: .25rem 1rem;
-    text-align: right;
-
-}
-
-.container{
-    background-color: rgb(166, 166, 235);
-    color: white;
-    padding: 1em;
-}
-
-
-.header{
-    background-color: #000073;
-    padding: 1em;
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* flex-shrink: 1; */
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
 }
 
-.logo{
-    font-family: "Kanit", sans-serif;
-    font-size: 2.2em;
+.logo {
+    font-size: 24px;
     font-weight: 700;
-    font-style: italic;
-    color: orange;
-    text-shadow: 3px 3px 3px #333, 5px 5px 1px #8387f7 ;
-
 }
 
-nav{
+.login-div {
     display: flex;
-    gap: 1em;
+    gap: 15px;
 }
 
-.nav-div, .login-div{
+.nav-link {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #ffcc00;
+}
+
+.container {
+    padding: 20px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap:1em;
-
 }
 
+/* login and register styles */
 
-.nav-link{
-    color:white;
-    text-decoration: none;
-    padding: .5em;
-    background-color: hsla(0, 0%, 40%, 0.50);
-    width: 10ch;
-    text-align: center;
-    border: 2px solid #333;
-    border-radius: 10px;
-    box-shadow: 1px 1px 3px #8387f7;
-}
-
-.nav-link:hover{
-    border: 2px solid white;
-}
-
-.nav-link-active{
-    color:white;
-    text-decoration: none;
-    padding: .5em;
-    background-color: hsla(253, 56%, 51%, 0.8);
-    width: 10ch;
-    text-align: center;
-    border: 1px solid #666;
-    border-radius: 10px;
-
-}
-
-.nav-link-active:hover{
-    border: 2px solid white;
-}
-
-.nav-block{
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
+.register-input{
+    padding: .5em 1em;
     margin-bottom: 1em;
 }
 
-.nav-block-link{
-    color:#fff;
-    text-shadow: 1px 1px 3px black;
-    text-decoration: none;
-    cursor: pointer;
+button{
+    margin-bottom: 1em;
 }
 
-
-.button{
-    padding: .5em 1em;
-    background-color: orange;
-    border: 2px solid orange;
-    color: white;
-    text-shadow: 1px 1px 2px black;
-    border-radius: 10px;
-    box-shadow: 1px 1px 3px #8387f7;
-    font-family: "Kanit", sans-serif;
-    font-size: medium;
-}
-
-.button:hover{
-    border: 2px solid white;
-}
-
-.link{
-    text-decoration: none;
-    font-family: "Roboto", sans-serif;
-    color: #ccc;
-}
-
-.link:hover{
-    color: #fff;
-}
-
-.week-nav{
-    margin: 2em 0;
-}
-
-
-/* football/games styles */
-
-#games{
-    display: grid;
-    grid-template-columns: 190px 190px 190px;
-    margin-top: 2em;
-}
-
-.game{
-    padding: 1em 1em;
-    border: 1px solid white;
-    text-decoration: none;
-    text-shadow: 1px 1px 3px black;
-    color: white;
-}
-
-.game-team{
+.button-div{
     display: flex;
-    gap: 1em;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
 }
 
-.game-team-name{
-    min-width: 3ch;
-    font-weight: 600;
 
+
+/* Navigation block styles */
+
+.nav-block {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    justify-content: center;
 }
 
-.game-points{
-    width: 3ch;
+.nav-block-link {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: 500;
+}
+
+.nav-block-link:hover {
+    text-decoration: underline;
+}
+
+.nav-link-active{
+    color: #007BFF;
+    text-decoration: none;
+}
+
+/* Section styles */
+
+section {
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.logged-user{
+    background-color: #bbb;
+    color: white;
     text-align: right;
-    font-weight: 600;
+    padding-right: 2em;
 }
 
-.game-date{
-    width: 100%;
+.week-nav{
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: .75em;
+}
+
+.week-nav span{
+    width:100%;
+    color: white;
+    background-color: #555;
     text-align: center;
-    font-size: small;
+}
+.week-nav a{
+    min-width: 2ch;
+}
+
+/* Responsive styles */
+
+@media (max-width: 768px) {
+    .header {
+        /* flex-direction: column; */
+        align-items: flex-start;
+    }
+
+    .nav-block {
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .nav-block-link {
+        font-size: 18px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    .login-div {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 20px;
+    }
+
+    .nav-link {
+        font-size: 14px;
+    }
+
+    .nav-block-link {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    .header {
+        padding: 10px;
+    }
+}
+
+
+/* Games Section Styles */
+
+#games {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive columns */
+    gap: 20px; /* Space between grid items */
+    padding: 20px;
+}
+
+.game {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white; /* Background color for game cards */
+    border: 1px solid #ddd; /* Border around each game card */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px;
+    text-align: center;
+    text-decoration: none; /* Remove default link styling */
+    color: black; /* Text color */
+    transition: transform 0.3s, box-shadow 0.3s; /* Hover effects */
+}
+
+.game:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+
+.game-team {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1em;
+    margin-bottom: 10px; /* Space between teams and date */
+}
+
+.game-team img {
+    margin-right: 10px; /* Space between image and text */
+}
+
+.game-date {
+    font-size: 14px; /* Size for the date */
+    color: #555; /* Color for the date text */
 }
 
 .checkmark{
     display: flex;
-    justify-content: center;
+    gap:1em;
+    margin-top: .5em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #games {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust columns for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .game {
+        padding: 10px; /* Smaller padding for mobile */
+    }
+
+    .game-date {
+        font-size: 12px; /* Smaller date text for mobile */
+    }
+}
+
+/* Picks Page --all picks */
+
+.pickinfo-game{
+    background-color: #bbb;
+    color: white;
+    min-width: 300px;
+    padding-left: .25em;
+}
+
+.pickinfo-div{
+    display:flex;
     align-items: center;
-    gap: 1em;
-    margin-top: 1em;
-    border: 1px solid white;
+    justify-content: center;
+    gap:1em;
+
 }
 
-.space{
-    min-height: 24px;
+.pickinfo-details{
+    display: flex;
+    align-items: center;
+    gap:1em;
+    min-width: 125px;
 }
 
-
+.x-button{
+    border:none;
+}
 
 
 /*  pick form styles  */
@@ -263,7 +320,7 @@ nav{
 .pick-info p{
     display: flex;
     align-items: center;
-    margin: 0 1em;
+    margin: 0 .5em;
     font-size: 2rem;
     font-weight: 700;
 }
@@ -293,7 +350,7 @@ nav{
 .pick-image{
     display: flex;
     justify-content: center;
-    min-height: 200px;
+    min-height: 80px;
 
 }
 
@@ -314,7 +371,7 @@ nav{
 .bottom-div{
     width: 320px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding: 1em;
 }
 
@@ -346,313 +403,3 @@ nav{
     background-color: orange;
 
 }
-
-/* ##### Bigboard Styles */
-.board{
-    overflow: scroll;
-    margin-top: 2em;
-}
-
-.headings, .data{
-    display:flex;
-    justify-content: flex-start;
-    align-items: center;
-    border: 1px solid #00007350;
-}
-
-.name-span {
-    min-width: 12ch;
-    text-transform: uppercase;
-    padding-left: .5rem;
-}
-
-
- .data-total-span, .data-miss-span{
-    padding: 0 1rem;
-    font-size: small;
-    min-width: 4rem;
-    text-align: right;
-    margin: .5rem 0 .5rem 0;
-
-}
-
-.total-span, .miss-span{
-    font-size: x-small;
-    text-transform: uppercase;
-    min-width: 4rem;
-    text-align: right;
-    padding-right: 1rem;
-    margin: .5rem 0 .5rem 0;
-}
-
-
-.head-span, .data-pick-span{
-    font-size: medium;
-    width: 7ch;
-    text-align: center;
-    padding: .5rem 0;
-    border: 1px solid #00007350
-}
-
-
-
-.data-name-span{
-    min-width: 12ch;
-    padding-left: .5rem;
-}
-
-.current-user{
-    background-color: orange;
-}
-
-
-
-
-
-/* #### User-pick styles */
-
-#user-picks .pick-info{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-    border: 1px white solid;
-    padding: 1em;
-}
-
-
-#user-picks a{
-    text-decoration: none;
-    cursor: pointer;
-    color: white;
-}
-
-.picked-banner{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1em;
-    width: 100%;
-    background-color: #000073;
-    font-size: 1rem;
-    font-weight: 500;
-    padding: .25rem 1rem;
-    text-align: center;
-    margin-bottom: 1rem;
-}
-
-.picked, .points{
-    font-size: 1.3rem;
-    padding: .25rem 1rem;
-}
-
-.team-div{
-    display: flex;
-    align-items: center;
-    gap:1em;
-    width:250px;
-}
-
-.awayteam, .hometeam{
-    width: 120px;
-    font-weight: 700;
-    font-size: 1.5rem;
-
-}
-.score{
-    width: 50px;
-    text-align: right;
-    font-size: 2rem;
-    font-weight: 700;
-}
-
-.game-details{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.win{
-    background-color: greenyellow;
-}
-
-.loss{
-    background-color: red;
-}
-
-
-
-/* user-picks styles */
-
-.x-button{
-    border:none;
-    outline:none;
-    background-color: rgb(166, 166, 235);
-    cursor: pointer;
-}
-.x-button:before{
-    content: "delete";
-    position:absolute;
-    left:25px;
-    top:-10px;
-    border: 1px solid black;
-    background-color: white;
-    padding: 3px 6px;
-    display: none;
-}
-
-.x-button:hover:before{
-    display: block;
-}
-
-
-.pickinfo{
-    display:flex;
-    flex-direction: column;
-}
-
-.pickinfo-space{
-    min-width: 56px;
-}
-
-.pickinfo-game{
-    background-color:#00007388;
-    border: 1px solid white;
-    padding: .5em 1em;
-}
-
-.pickinfo-div {
-    display: grid;
-    grid-template-columns: 56px auto 56px;
-    align-items: center;
-    justify-items: center; /* Center items horizontally */
-}
-
-.pickinfo-details {
-    display: flex; /* Change to flexbox */
-    align-items: center; /* Center items horizontally */
-    text-align: center;
-    gap:1em;
-    font-weight: 600;
-    text-shadow: 1px 1px 2px black;
-}
-
-.pickinfo-pick, .pickinfo-points{
-    text-align: left;
-    min-width: 3ch;
-}
-
-.pickinfo-edit{
-
-}
-
-.pickinfo-delete{
-
-}
-
-.pickinfo-link{
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    padding: .5em 1em;
-}
-
-.pickinfo-link:before{
-    content: "edit";
-    font-size: smaller;
-    position:absolute;
-    left:50px;
-    top:-10px;
-    border: 1px solid black;
-    background-color: white;
-    padding: 3px 6px;
-    display: none;
-}
-
-.pickinfo-link:hover:before{
-    display: block;
-}
-
-/* Leaderboard Styles */
-
-.leaderboard {
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    flex-direction: column;
-    /* width: 98%; */
-    overflow: hidden;
-    overflow-x: scroll;
-    height: fit-content;
-  }
-
-
-.board {
-    display: flex;
-
-    overflow: hidden;
-    overflow-x: scroll;
-  }
-
-  .lb-left {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    position: sticky;
-    z-index: 5;
-    left: 0;
-    font-size: 0.7rem;
-    background-color: #444;
-    border-right: 1px solid #eeeeee50;
-  }
-
-  .lb-right {
-    display: flex;
-    flex-direction: column;
-    /* width: 1800px; */
-    z-index: 1;
-    font-size: 0.7rem;
-  }
-
-  .lb-head-left,
-  .lb-row-left {
-    display: flex;
-    width: 150px;
-    z-index: 20;
-    position: sticky;
-    left: 0;
-    background-color: #444;
-  }
-
-  .lb-row-left,
-  .lb-row-right {
-    padding: 0.5rem 0;
-  }
-
-  .lb-head-right,
-  .lb-row-right {
-    display: flex;
-    z-index: 10;
-  }
-
-  .headname,
-  .user-name {
-    min-width: 10em;
-    padding-left: 0.5rem;
-  }
-
-  .headwk,
-  .lb-wk {
-    min-width: 8ch;
-    text-align: center;
-  }
-
-  .lb-head-left,
-  .lb-head-right {
-    padding: 0.5rem 0;
-    border-bottom: 1px solid #eeeeee50;
-  }

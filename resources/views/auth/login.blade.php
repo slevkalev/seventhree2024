@@ -30,8 +30,8 @@
 
         <x-form-button>Submit</x-form-button>
         <div>
-            <a href="#" class="link">Forgot Password</a>
-            <a href="#" class="link">Create Account</a>
+            {{-- <a href="#" class="link">Forgot Password</a> --}}
+            <a href="/register" class="link">Create Account</a>
         </div>
     </form>
 </x-layout>
