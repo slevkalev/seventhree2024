@@ -8,7 +8,10 @@
 
     <h2>Bigboard - Week {{ $week }}</h2>
 
-    <div class="board"></div>
+    <div class="board">
+        <div class="board-left"></div>
+        <div class="board-right"></div>
+    </div>
 
 
 
@@ -23,129 +26,209 @@
         const boardDiv = document.querySelector(".board");
         const header = document.querySelector('.header')
 
+        console.log(picks)
+
         header.insertAdjacentHTML('afterend', `<div class="logged-user">${currentUser.first_name} ${currentUser.last_name}</div>`)
 
         const picksForWeek = picks.filter(pick=>{
-           if(games[pick.game].week === parseInt(week)) return pick
+           if(games[pick.game -1].week === parseInt(week)) return pick
         })
 
 
 
-        function bigboard(users, games, teams, picks, numberOfGames){
-            const board = []
+        const gamesWithResult = games.map(game => {
+            const homePoints = parseInt(game.home_pts);
+            const awayPoints = parseInt(game.away_pts);
+            const scoreDifference = homePoints - awayPoints;
 
-            const score = 0
-            const missed = 0
-            const total = {{ $maxPoints }} - missed
+            let winner = [];
 
-
-            for(let user of users){
-
-                const userPicks = picks.filter(pick=>pick.user === user.id)
-
-                const record = {}
-                record.id = user.id
-                record.name = `${user.first_name} ${user.last_name.charAt(0)}`
-                record.missed = missed
-                record.total =total
-
-                for(let i = 1; i<=numberOfGames; i++){
-                    record[`pick${i}`] = 0
+            if (game.game_status === "6") {
+                if (scoreDifference === 0) {
+                    winner = [game.home_team, game.away_team]; // Both teams tie
+                } else if (scoreDifference > 0) {
+                    winner = [game.home_team]; // Home team wins
+                } else {
+                    winner = [game.away_team]; // Away team wins
                 }
-
-                for(let pick of picks){
-                    record[`pick${pick.points}`] = pick.pick
-                }
-
-                record.currentUser = false
-
-                if(currentUser){
-
-                    (user.id === currentUser.id)? record.currentUser = true: record.currentUser = false
-
-                }
-
-                board.push(record)
             }
 
+            return {
+                ...game,
+                winner: winner,
+            };
+        });
 
-            return board
+        const userPicks = users.map(user => {
+            // Filter picks for this user
+            let userPicksArray = picksForWeek.filter(pick => pick.user === user.id);
 
-        }
-
-        let data = bigboard(users, games, teams, picksForWeek, numberOfGames)
-
+            let userPicksWithResult = userPicksArray.map(pick => {
+                let game = gamesWithResult.find(game => game.id === pick.game);
 
 
-            //Create Headings
-            let headings =    `<div class="headings">
+                if(game.game_status !=="6"){
+
+                    return {
+                        ...pick,
+                        won: 0,
+                        missed: 0
+                    }
+
+                }else{
+
+                    let won = game.winner.includes(pick.pick) ? pick.points : 0;
+
+                    let missed = !game.winner.includes(pick.pick) ? pick.points : 0
+
+
+                    return {
+                        ...pick,
+                       won: won,
+                       missed: missed
+                    }
+                }
+
+            });
+
+            // Sort the picks array
+
+            userPicksWithResult.sort((a, b) => {
+                if (a.points < b.points) return -1;
+                if (a.points > b.points) return 1;
+                return 0;
+            });
+
+
+            return {
+                ...user,
+                picks: userPicksWithResult
+
+            };
+        });
+
+
+
+        let usersWithTotal = userPicks.map(user=>{
+
+            let missed = user.picks.reduce((a, c) => {
+                return a + c.missed
+            },0)
+
+
+            let total = user.picks.reduce((a, c)=>{
+                return a + c.won
+            },0)
+
+
+            return {
+                ...user,
+                total:total,
+                missed:missed,
+            }
+        })
+
+        console.log( usersWithTotal)
+
+
+
+
+
+        // add headings to left side of the board
+
+        const leftHeadings =  `<div class="left-headings">
                 <span class="name-span">Name</span>
                 <span class="total-span">Total</span>
-                <span class="miss-span">Miss</span>`
+                <span class="miss-span">Miss</span>
+                </div>`
 
-            for(let i = 1; i <= numberOfGames; i++){
-                headings += `<span class="head-span">${i}</span>`
-            }
+        //add user data to left side of the board
 
-            headings += `</div>`
-
-
-            boardDiv.insertAdjacentHTML('afterbegin', headings)
-
-            //Insert Data
-            data.forEach(record=>{
-
-                let userPickDetails = `<div class="data">`
-
-                Object.values(record).forEach(element => {
-
-                     userPickDetails += `<span>${element}</span>`
-
-                });
-
-                userPickDetails += `</div>`
-
-                boardDiv.insertAdjacentHTML('beforeend', userPickDetails)
-
+        let leftData =`<div class="left-data">`
+            usersWithTotal.forEach(user=>{
+                let userFlag = user.id === currentUser.id? "current-user" : ""
+                leftData += `<div class="row ${userFlag}">
+                        <span class="data-name-span">${user.first_name} ${user.last_name.charAt(0)}</span>
+                        <span class="data-total-span">${user.total}</span>
+                        <span class="data-missed-span">${user.missed}</span>
+                    </div>
+                `
             })
+        leftData += `</div>`
 
-            const dataDiv = document.querySelectorAll('.data')
+        document.querySelector(".board-left").insertAdjacentHTML('afterbegin', leftHeadings)
+        document.querySelector(".board-left").insertAdjacentHTML('beforeend', leftData)
 
-            for(let div of dataDiv){
+        //add headings to right sid of the board
 
-                const spans = div.getElementsByTagName('span')
+        let rightHeadings = '<div class="right-headings">'
 
-                spans[spans.length -1].classList.add("hide")
+        for(let x = 0; x<numberOfGames; x++){
+            rightHeadings += `<span class="head-span">${x+1}</span>`
+        }
 
-                if(spans[spans.length - 1].innerText === "true") div.classList.add("current-user")
+        rightHeadings+=`</div>`
 
 
-                    for(let i = 0; i < spans.length; i++){
-                        if(i === 0){ spans[i].classList.add('hide')}
-                        if(i === 1){ spans[i].classList.add('data-name-span')}
-                        if(i === 2){ spans[i].classList.add('data-total-span')}
-                        if(i === 3){ spans[i].classList.add('data-miss-span')}
-                        if(i > 3 && i < spans.length - 1){ spans[i].classList.add('data-pick-span')}
-                        if(i === 0 && i === spans.length - 1){ spans[i].classList.add('hide')}
+        //add user pick data to the right side of the board
+
+        let rightData = `<div class="right-data">`
+            usersWithTotal.forEach(user=>{
+                let userFlag = user.id === currentUser.id? "current-user" : ""
+                rightData += `<div class="row ${userFlag}">`
+
+
+                for(let i = 0; i < numberOfGames; i++){
+
+                    const pick = user.picks.find(pick=>pick.points -1 === i)
+
+                    const pickValue = !pick?  "--": pick.pick
+
+                    if(pick){
+
+                        let game = gamesWithResult.find(game=>game.id === pick.game)
+
+                        let winLoss = ""
+                        if(game.game_status === "6"){
+
+                        winLoss = game.winner.includes(pick.pick)? "win" :"loss"
+
+                        }
+
+                        rightData += `<span class="data-pick-span ${winLoss}">${pickValue}</span>`
+                    }else{
+
+                        rightData += `<span class="data-pick-span">${pickValue}</span>`
+
                     }
-            }
 
-            const spans = document.querySelectorAll(".data-pick-span")
+                }
 
-
-            function teamShortName(team){
-                let val = parseInt(team)
-                let res = teams[val - 1]
-                if(!res) return "--"
-                return res.short_name
-            }
-
-
-            spans.forEach(span=>{
-                let value = span.innerText
-                span.innerText = teamShortName(value)
+                rightData += `</div>`
             })
 
+        rightData += `</div>`
 
-            </script>
+        document.querySelector(".board-right").insertAdjacentHTML('afterbegin', rightHeadings)
+        document.querySelector(".board-right").insertAdjacentHTML('beforeend', rightData)
+
+        const spans = document.querySelectorAll(".data-pick-span")
+
+        // convert team id in data-pick-span to team short_name
+
+        function teamShortName(team){
+            let val = parseInt(team)
+            let res = teams[val - 1]
+            if(!res) return "--"
+            return res.short_name
+        }
+
+
+        spans.forEach(span=>{
+            let value = span.innerText
+            span.innerText = teamShortName(value)
+        })
+
+
+    </script>
 </x-layout_dash>

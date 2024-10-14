@@ -27,6 +27,21 @@ body {
     gap: 15px;
 }
 
+.loss{
+    background-color: red;
+    color: white;
+}
+
+.win{
+    background-color: lime;
+    color:white;
+}
+
+
+.hide{
+    display: none;
+}
+
 .nav-link {
     color: white;
     text-decoration: none;
@@ -190,7 +205,8 @@ h3 {
 
 #games {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive columns */
+    grid-template-columns: repeat(2, 1fr);
+    /* grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); Responsive columns */
     gap: 20px; /* Space between grid items */
     padding: 20px;
 }
@@ -221,6 +237,13 @@ h3 {
     justify-content: flex-start;
     gap: 1em;
     margin-bottom: 10px; /* Space between teams and date */
+}
+
+.game-team-name{
+    min-width: 30px;
+}
+.game-points{
+    min-width: 30px;
 }
 
 .game-team img {
@@ -367,12 +390,15 @@ h3 {
     padding: .5em 1em;
 }
 
+#points-select .button{
+    height:42px;
+}
 
 .bottom-div{
     width: 320px;
     display: flex;
     justify-content: center;
-    padding: 1em;
+    gap: 1em;
 }
 
 .cancel-button, .delete-button{
@@ -381,18 +407,20 @@ h3 {
     font-family: 'Kanit', sans-serif;
     border-radius: 10px;
     font-size: medium;
+
 }
 
 .cancel-button{
     background-color: #000073;
     border: 1px solid #000073;
+    height: 24px;
     text-decoration: none;
 }
 
 .delete-button{
     background-color: #ff0000;
     border: 1px solid #ff0000;
-    outline:none;
+
 }
 
 .cancel-button:hover, .delete-button:hover{
@@ -403,3 +431,63 @@ h3 {
     background-color: orange;
 
 }
+
+/* Bigboard Styles */
+
+
+.board{
+    display: flex;
+    overflow: scroll;
+    width: 100%;
+    max-width: 1170px;
+    position: relative;
+
+}
+
+
+.board-left{
+    position: sticky;
+    background-color: white;
+    left: 0;
+    border-radius: 10px 0 0 10px;
+    padding-left: 1em;
+    border: 1px solid black;
+}
+
+.board-right{
+    background-color: white;
+    border-radius: 0 10px 10px 0;
+    padding-right: 1em;
+    border: 1px solid black;
+}
+
+.left-headings, .right-headings, .row{
+    display: flex;
+}
+
+.name-span, .data-name-span{
+    min-width: 10ch;
+}
+
+.total-span, .data-total-span{
+    min-width: 5ch;
+    text-align: right;
+}
+
+.miss-span, .data-missed-span{
+    min-width: 5ch;
+    text-align: right;
+    margin-right: 1em;
+}
+
+
+
+.head-span, .data-pick-span{
+    width: 57px;
+    text-align: center;
+}
+
+.current-user{
+    background-color: #ffa50050;
+}
+

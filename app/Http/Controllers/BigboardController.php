@@ -16,11 +16,16 @@ use Illuminate\Support\Facades\Auth;
 class BigboardController extends Controller
 {
     public function index() {
+        $currentUser = Auth::user() ?? "";
+
+        if(Auth::guest()){
+            return redirect('/login');
+        }
 
         $today = Carbon::now()->format('m/d/Y');
-        $currentUser = Auth::user() ?? "";
         $weeks = Helper::schedule();
         $weekId = Helper::get_week_id($today, $weeks);
+
 
         return $this->show($weekId);
 
@@ -28,9 +33,14 @@ class BigboardController extends Controller
 
     public function show($week){
 
+        $currentUser = Auth::user() ?? "";
+
+        if(Auth::guest()){
+            return redirect('/login');
+        }
+
 
         $today = Carbon::now()->format('m/d/Y');
-        $currentUser = Auth::user() ?? "";
         $weeks = Helper::schedule();
         // $weekId = Helper::get_week_id($today, $weeks);
         $weekId = $week;

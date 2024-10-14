@@ -17,6 +17,12 @@ class GamesByWeekController extends Controller
 {
     public function index() {
 
+        $currentUser = Auth::user() ?? "";
+
+        if(Auth::guest()){
+            return redirect('/login');
+        }
+
         $today = Carbon::now()->format('m/d/Y');
         $weeks = Helper::schedule();
         $weekId = Helper::get_week_id($today, $weeks);

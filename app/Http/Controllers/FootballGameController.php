@@ -9,10 +9,14 @@ use Illuminate\Support\Facades\Auth;
 class FootballGameController extends Controller
 {
     public function index() {
+        $user = Auth::user();
+
+        if(Auth::guest()){
+            return redirect('/login');
+        }
 
         $games = Game::all();
 
-        $user = Auth::user();
         $userId = Auth::id();
         $firstname = $user->first_name;
         $lastname = $user->last_name;
