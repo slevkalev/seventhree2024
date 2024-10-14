@@ -26,7 +26,6 @@
         const boardDiv = document.querySelector(".board");
         const header = document.querySelector('.header')
 
-        console.log(picks)
 
         header.insertAdjacentHTML('afterend', `<div class="logged-user">${currentUser.first_name} ${currentUser.last_name}</div>`)
 
@@ -128,7 +127,16 @@
             }
         })
 
-        console.log( usersWithTotal)
+
+
+
+        usersWithTotal.sort((a, b) => {
+                if (a.total < b.total) return 1;
+                if (a.total > b.total) return -1;
+                return 0;
+            });
+
+
 
 
 
