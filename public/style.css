@@ -198,6 +198,10 @@ h3 {
     .header {
         padding: 10px;
     }
+
+    .board{
+        font-size: x-small;
+    }
 }
 
 
