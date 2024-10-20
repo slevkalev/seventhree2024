@@ -32,6 +32,7 @@
                         <span>{{ $game->awayTeam()->pluck('city')->first() }} {{ $game->awayTeam()->pluck('name')->first() }} at {{ $game->homeTeam()->pluck('city')->first() }} {{ $game->homeTeam()->pluck('name')->first() }}</span>
                     </div>
                     <div>{{$game->locked == 1? "locked" : "open"}}</div>
+                    <div>{{$game->game_status == 6? "Final" : "pending"}}</div>
 
             </a>
 
