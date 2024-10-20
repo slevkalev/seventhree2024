@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Game;
 use Illuminate\Support\Facades\Auth;
+use App\Helper\Helper;
+use Carbon\Carbon;
+
 
 class FootballGameController extends Controller
 {
@@ -18,13 +21,18 @@ class FootballGameController extends Controller
         $games = Game::all();
 
         $userId = Auth::id();
+        $today = Carbon::now()->format('m/d/Y');
+        $weeks = Helper::schedule();
+        $weekId = Helper::get_week_id($today, $weeks);
         $firstname = $user->first_name;
         $lastname = $user->last_name;
         $email = $user->email;
 
+
         return view('football.dashboard.games.index', [
             'games' => $games,
-            'email' => $email
+            'email' => $email,
+            'week' => $weekId
         ]);
 
     }

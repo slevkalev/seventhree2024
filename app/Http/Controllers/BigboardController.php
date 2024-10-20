@@ -51,6 +51,7 @@ class BigboardController extends Controller
         $maxPoints = Helper::getMaxPointsInWeek($numberOfGames);
         $users = User::select('id', 'first_name', 'last_name')->get();
 
+
         return view('football.bigboard.show',[
             'week'=>$week,
             'games' => $games,

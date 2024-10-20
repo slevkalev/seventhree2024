@@ -8,6 +8,8 @@
 
     <h2>Bigboard - Week {{ $week }}</h2>
 
+    <div class="hidden-message"></div>
+
     <div class="board">
         <div class="board-left"></div>
         <div class="board-right"></div>
@@ -238,5 +240,54 @@
         })
 
 
+    </script>
+
+    <script>
+        function checkBigboardVisibility() {
+            // Get the current date and time
+            const now = new Date();
+
+            // Find the current week's Sunday at 1:00 PM
+            const sunday = new Date(now);
+            sunday.setDate(now.getDate() - now.getDay());
+            sunday.setHours(13, 0, 0, 0);
+
+            // Find the next Wednesday at 12:00 AM
+            const wednesday = new Date(sunday);
+            wednesday.setDate(sunday.getDate() + 3);
+            wednesday.setHours(0, 0, 0, 0);
+
+            // Get the bigboard element and the hidden message element
+            const bigboard = document.querySelector('.board');
+            const hiddenMessage = document.querySelector('.hidden-message');
+
+            if (now >= sunday && now < wednesday) {
+                // If current time is between Sunday 1:00 PM and Wednesday 12:00 AM, show the bigboard
+                bigboard.classList.remove('hide');
+                hiddenMessage.style.display = 'none';
+            } else {
+                // Otherwise, hide the bigboard
+                bigboard.classList.add('hide');
+                hiddenMessage.style.display = 'block';
+
+                if (now < sunday) {
+                    // If it's before Sunday 1:00 PM
+                    const timeUntil = sunday.getTime() - now.getTime();
+                    const hoursUntil = Math.floor(timeUntil / (1000 * 60 * 60));
+                    hiddenMessage.textContent = `Bigboard Hidden until Sunday at 1:00 PM (${hoursUntil} hours)`;
+                } else {
+                    // If it's after Wednesday 12:00 AM
+                    const nextSunday = new Date(sunday);
+                    nextSunday.setDate(sunday.getDate() + 7);
+                    const timeUntil = nextSunday.getTime() - now.getTime();
+                    const daysUntil = Math.floor(timeUntil / (1000 * 60 * 60 * 24));
+                    hiddenMessage.textContent = `Bigboard Hidden until next Sunday at 1:00 PM (${daysUntil} days)`;
+                }
+            }
+        }
+
+        // Run the function immediately and then every minute
+        checkBigboardVisibility();
+        setInterval(checkBigboardVisibility, 600000);
     </script>
 </x-layout_dash>

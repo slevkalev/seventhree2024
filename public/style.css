@@ -40,9 +40,6 @@ body {
 }
 
 
-.hide{
-    display: none;
-}
 
 .nav-link {
     color: white;
@@ -497,3 +494,20 @@ h3 {
     background-color: #ffa50050;
 }
 
+
+
+
+/* dashboard games styles */
+
+.gm{
+    display: flex;
+    justify-content: flex-start;
+    min-width: 400px;
+    flex-direction: column;
+    margin-bottom: 1em;
+}
+
+
+.hide{
+    display: none;
+}
