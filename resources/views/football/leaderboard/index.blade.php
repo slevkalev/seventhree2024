@@ -7,7 +7,7 @@
     <h2>Leaderboard Page!!!</h2>
 
     <h4>Current Week {{ $week }}</h4>
-    <p>{{ $today }}</p>
+
 
 
     <div class="board">
