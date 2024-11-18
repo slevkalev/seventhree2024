@@ -13,7 +13,7 @@
 
         @foreach ($picks as $pick)
 
-            <a href="/dashboard/picks/{{ $pick['id'] }}" class="">
+            <a href="/dashboard/picks/{{ $pick['id'] }}/edit" class="">
 
                 <div>
                     PickId: {{ $pick->id }}

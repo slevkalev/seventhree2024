@@ -47,7 +47,7 @@
         </div>
         <div class="user-div"></div>
         <main>
-            <div class="container">
+            <div class="container center">
                 {{ $slot }}
             </div>
         </main>

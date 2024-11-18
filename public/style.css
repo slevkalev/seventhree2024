@@ -60,6 +60,12 @@ body {
     align-items: center; */
 }
 
+.center{
+    justify-content: center;
+    align-items: center;
+}
+
+
 /* login and register styles */
 
 .register-input{
@@ -465,6 +471,7 @@ h3 {
     left: 0;
     border-radius: 10px 0 0 10px;
     padding-left: 1em;
+    /* padding-right: 1em; */
     border: 1px solid black;
 }
 
@@ -475,7 +482,7 @@ h3 {
     border: 1px solid black;
 }
 
-.left-headings, .right-headings, .row{
+.left-headings, .right-headings, .row, .lb-row-right{
     display: flex;
 }
 
@@ -486,6 +493,7 @@ h3 {
 .total-span, .data-total-span{
     min-width: 5ch;
     text-align: right;
+    padding-right: 1em;
 }
 
 .miss-span, .data-missed-span{
@@ -496,13 +504,17 @@ h3 {
 
 
 
-.head-span, .data-pick-span{
+.head-span, .data-pick-span, .lb-wk{
     width: 57px;
     text-align: center;
 }
 
 .current-user{
     background-color: #ffa50050;
+}
+
+.a-left{
+    text-align: left;
 }
 
 
