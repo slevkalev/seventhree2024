@@ -505,7 +505,8 @@ h3 {
 
 
 .head-span, .data-pick-span, .lb-wk{
-    width: 57px;
+    min-width: 57px;
+    max-width: 57px;
     text-align: center;
 }
 

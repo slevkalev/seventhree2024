@@ -4,7 +4,7 @@
     </x-slot:heading>
     <x-nav-block></x-nav-block>
 
-    <h2>Leaderboard Page!!!</h2>
+    <h2>Leaderboard</h2>
 
     <h4>Current Week {{ $week }}</h4>
 
