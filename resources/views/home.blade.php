@@ -8,54 +8,13 @@
 
     <h1>2024 NFL Pool</h1>
 
-    <section>
+    <section class="news">
         <h3>News</h3>
-        <p>Week 13 - NFL 2024 Regular Season</p>
-        <h5>Thanksgiving Day Schedule</h5>
-        <div class="game-team">
-            <span class="time">12:30 PM</span>
-            <div class="game-team">
-                <img src="./images/logos/bears.png" alt="bears.png" width="40" height="40">
-                <span>Chicago Bears</span>
-                <span>at</span>
-                <img src="./images/logos/lions.png" alt="lions.png" width="40" height="40">
-                <span>Detroit Lions</span>
-            </div>
-        </div>
 
-        <div class="game-team m-ba">
-            <span class="time">4:30 PM</span>
-            <div class="game-team">
-                <img src="./images/logos/giants.png" alt="giants.png" width="40" height="40">
-                <span>NY Giants</span>
-                <span>at</span>
-                <img src="./images/logos/cowboys.png" alt="cowboys.png" width="40" height="40">
-                <span>Dallas Cowboys</span>
-            </div>
-        </div>
+        <span>Week 14</span>
+        <span>13 games this week</span>
+        <span>No games on Friday or Saturday</span>
 
-        <div class="game-team m-ba">
-            <span class="time">8:20 PM</span>
-            <div class="game-team">
-                <img src="./images/logos/dolphins.png" alt="dolphins.png" width="40" height="40">
-                <span>Miami Dolphins</span>
-                <span>at</span>
-                <img src="./images/logos/packers.png" alt="packers.png" width="40" height="40">
-                <span>Green Bay Packers</span>
-            </div>
-        </div>
-        <h5>Black Friday Schedule</h5>
-
-        <div class="game-team m-ba">
-            <span class="time">3:00 PM</span>
-            <div class="game-team">
-                <img src="./images/logos/raiders.png" alt="raiders.png" width="40" height="40">
-                <span>Las Vegas Raiders</span>
-                <span>at</span>
-                <img src="./images/logos/chiefs.png" alt="chiefs.png" width="40" height="40">
-                <span>Kansas City Chiefs</span>
-            </div>
-        </div>
     </section>
 
     <section>
@@ -66,77 +25,77 @@
     <section>
         <h3>Winners</h3>
         <div>
-            <div>
+            <div class="winners">
                 <span>Week 1</span>
-                <span> -- </span>
+                <span>Terri D</span>
             </div>
-            <div>
+            <div class="winners">
                 <span>Week 2</span>
-                <span> -- </span>
+                <span>John M</span>
             </div>
 
-            <div>
+            <div class="winners">
                 <span>Week 3</span>
-                <span> -- </span>
-            <div>
-
+                <span>Shannon B</span>
+            </div>
+            <div class="winners">
                 <span>Week 4</span>
-                <span> -- </span>
+                <span>Terri D</span>
             </div>
 
-            <div>
+            <div class="winners">
                 <span>Week 5</span>
-                <span> -- </span>
+                <span>Lawrence C</span>
             </div>
-            <div>
+            <div class="winners">
                 <span>Week 6</span>
-                <span> -- </span>
+                <span>Darrin W and Luke C</span>
             </div>
-            <div>
+            <div class="winners">
                 <span>Week 7</span>
-                <span> -- </span>
+                <span>Bernard M</span>
             </div>
-            <div>
+            <div class="winners">
                 <span>Week 8</span>
-                <span> -- </span>
+                <span>Luke C</span>
             </div>
-            <div>
+            <div class="winners">
                 <span>Week 9</span>
-                <span> -- </span>
+                <span>John M</span>
             </div>
-            <div>
+            <div class="winners">
                 <span>Week 10</span>
-                <span> -- </span>
+                <span>Steve S</span>
             </div>
-            <div>
+            <div class="winners">
                 <span>Week 11</span>
-                <span> -- </span>
+                <span>Lawrence C</span>
             </div>
-            <div>
+            <div class="winners">
                 <span>Week 12</span>
-                <span> -- </span>
+                <span>Bernard M</span>
             </div>
-            <div>
+            <div class="winners">
                 <span>Week 13</span>
-                <span> -- </span>
+                <span>Mark C</span>
             </div>
-            <div>
+            <div class="winners">
                 <span>Week 14</span>
                 <span> -- </span>
             </div>
-            <div>
+            <div class="winners">
                 <span>Week 15</span>
                 <span> -- </span>
             </div>
-            <div>
+            <div class="winners">
                 <span>Week 16</span>
                 <span> -- </span>
             </div>
-            <div>
+            <div class="winners">
                 <span>Week 17</span>
                 <span> -- </span>
             </div>
-            <div>
+            <div class="winners">
                 <span>Week 18</span>
                 <span> -- </span>
             </div>

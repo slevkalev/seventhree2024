@@ -570,6 +570,16 @@ h3 {
     justify-content: space-between;
 }
 
+.news{
+    display: flex;
+    flex-direction: column;
+}
+.winners{
+    display: grid;
+    grid-template-columns: 100px 200px;
+    gap:2em;
+    min-width: 300px;
+}
 
 .hide{
     display: none;
