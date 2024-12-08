@@ -61,7 +61,7 @@
             </div>
             <div class="winners">
                 <span>Week 9</span>
-                <span>John M</span>
+                <span>John M and Lynn S</span>
             </div>
             <div class="winners">
                 <span>Week 10</span>
