@@ -11,9 +11,27 @@
     <section class="news">
         <h3>News</h3>
 
-        <span>Week 14</span>
-        <span>13 games this week</span>
-        <span>No games on Friday or Saturday</span>
+        <span>Week 16</span>
+        <span>16 games this week</span>
+        <h3>Saturday Games This Week</h3>
+        <div class="game">
+            <img src="/images/logos/texans.png" alt="texans.png">
+            <span>Houston Texans</span>
+            at
+            <img src="/images/logos/chiefs.png" alt="chiefs.png">
+            <span>Kansas City Chiefs</span>
+            <span>Sat 1:00 PM</span>
+        </div>
+
+        <div class="game">
+            <img src="/images/logos/steelers.png" alt="steelers.png">
+            <span>Pittspurgh Steelers</span>
+            at
+            <img src="/images/logos/ravens.png" alt="ravens.png">
+            <span>Baltimore Ravens</span>
+            <span>Sat 4:30 PM</span>
+        </div>
+
 
     </section>
 
@@ -81,11 +99,11 @@
             </div>
             <div class="winners">
                 <span>Week 14</span>
-                <span> -- </span>
+                <span> Bernard M</span>
             </div>
             <div class="winners">
                 <span>Week 15</span>
-                <span> -- </span>
+                <span> Steve M </span>
             </div>
             <div class="winners">
                 <span>Week 16</span>
