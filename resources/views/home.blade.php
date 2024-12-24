@@ -11,7 +11,7 @@
     <section class="news">
         <h3>News</h3>
 
-        <span>Week 16</span>
+        <span>Week 17</span>
         <span>16 games this week</span>
 
         <h3>Christmas Day Games</h3>
