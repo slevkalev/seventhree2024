@@ -40,6 +40,10 @@ body {
     text-shadow: 1px 1px 1px #555;
 }
 
+.mw350{
+    max-width: 350px;
+}
+
 
 
 .nav-link {

@@ -29,7 +29,12 @@
 
                     </div>
                     <div>
-                        <span>{{ $game->awayTeam()->pluck('city')->first() }} {{ $game->awayTeam()->pluck('name')->first() }} at {{ $game->homeTeam()->pluck('city')->first() }} {{ $game->homeTeam()->pluck('name')->first() }}</span>
+                        <span>{{ $game->awayTeam()->pluck('city')->first() }} {{ $game->awayTeam()->pluck('name')->first() }}</span>
+                        <span>{{ $game->away_pts }}</span>
+                            at
+                        <span>{{ $game->homeTeam()->pluck('city')->first() }}</span>
+                        <span> {{ $game->homeTeam()->pluck('name')->first() }}</span>
+                        <span>{{ $game->home_pts }}</span>
                     </div>
                     <div>{{$game->locked == 1? "locked" : "open"}}</div>
                     <div>{{$game->game_status == 6? "Final" : "pending"}}</div>
@@ -58,6 +63,11 @@
                 element.classList.add('hide');
             }
         });
+
+
+        const container = document.querySelector('.container')
+
+        container.classList.add('mw350')
 
     </script>
 
