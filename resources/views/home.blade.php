@@ -31,7 +31,7 @@
             at
             <img src="/images/logos/texans.png" alt="texans.png" width="70px" height="70px">
             <span>Houston Texans</span>
-            <span>Sat 4:30 PM</span>
+            <span>Wed 4:30 PM</span>
         </div>
 
 
@@ -42,7 +42,7 @@
             at
             <img src="/images/logos/bears.png" alt="bears.png" width="70px" height="70px">
             <span>Chicago Bears</span>
-            <span>Sat 8:15 PM</span>
+            <span>Thurs 8:15 PM</span>
         </div>
 
         <h3>Saturday Games</h3>
