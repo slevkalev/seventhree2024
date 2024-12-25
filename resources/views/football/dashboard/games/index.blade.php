@@ -65,9 +65,6 @@
         });
 
 
-        const container = document.querySelector('.container')
-
-        container.classList.add('mw350')
 
     </script>
 

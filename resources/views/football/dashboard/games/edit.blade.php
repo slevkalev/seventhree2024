@@ -7,7 +7,7 @@
         <a href="/dashboard/games">Games</a>
     </nav>
 
-    <h2>Game: {{ $game->id }} {{ $game->awayTeam()->pluck('city')->first() }} {{ $game->awayTeam()->pluck('name')->first() }} at {{ $game->id }} {{ $game->homeTeam()->pluck('city')->first() }} {{ $game->homeTeam()->pluck('name')->first() }}</h2>
+    <h2>Game: {{ $game->id }} {{ $game->awayTeam()->pluck('city')->first() }} {{ $game->awayTeam()->pluck('name')->first() }} at {{ $game->homeTeam()->pluck('city')->first() }} {{ $game->homeTeam()->pluck('name')->first() }}</h2>
 
     <form method="POST" action="/dashboard/games/{{ $game->id }}">
         @csrf
