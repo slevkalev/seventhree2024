@@ -244,6 +244,9 @@
 
     <script>
         function checkBigboardVisibility() {
+            if(currentUser.id===1){
+                return
+            }
             // Get the current date and time
             const now = new Date();
 
