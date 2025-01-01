@@ -11,69 +11,28 @@
     <section class="news">
         <h3>News</h3>
 
-        <span>Week 17</span>
+        <span>Week 18</span>
         <span>16 games this week</span>
-
-        <h3>Christmas Day Games</h3>
-        <div class="game">
-                <img src="/images/logos/chiefs.png" alt="chiefs.png" width="70px" height="70px">
-                <span>Kansas City Chiefs</span>
-            at
-                <img src="/images/logos/steelers.png" alt="steelers.png" width="70px" height="70px">
-                <span>Pittsburgh Steelers</span>
-
-                <span>Wed 1:00 PM</span>
-        </div>
-
-        <div class="game">
-            <img src="/images/logos/ravens.png" alt="ravens.png" width="70px" height="70px">
-            <span>Baltimore Ravens</span>
-            at
-            <img src="/images/logos/texans.png" alt="texans.png" width="70px" height="70px">
-            <span>Houston Texans</span>
-            <span>Wed 4:30 PM</span>
-        </div>
-
-
-        <h3>Boxing Day Game</h3>
-        <div class="game">
-            <img src="/images/logos/seahawks.png" alt="seahawks.png" width="70px" height="70px">
-            <span>Seattle Seahawks</span>
-            at
-            <img src="/images/logos/bears.png" alt="bears.png" width="70px" height="70px">
-            <span>Chicago Bears</span>
-            <span>Thurs 8:15 PM</span>
-        </div>
 
         <h3>Saturday Games</h3>
         <div class="game">
-            <img src="/images/logos/chargers.png" alt="chargers.png" width="70px" height="70px">
-            <span>Los Angeles Chargers</span>
+                <img src="/images/logos/browns.png" alt="browns.png" width="70px" height="70px">
+                <span>Cleveland Browns</span>
             at
-            <img src="/images/logos/patriots.png" alt="patriots.png" width="70px" height="70px">
-            <span>New England Patriots</span>
-            <span>Sat 1:00 PM</span>
+                <img src="/images/logos/ravens.png" alt="ravens.png" width="70px" height="70px">
+                <span>Baltimore Ravens</span>
+
+                <span>Wed 4:30 PM</span>
         </div>
 
         <div class="game">
-            <img src="/images/logos/broncos.png" alt="broncos.png" width="70px" height="70px">
-            <span>Denver Broncos</span>
-            at
             <img src="/images/logos/bengals.png" alt="bengals.png" width="70px" height="70px">
             <span>Cincinnati Bengals</span>
-            <span>Sat 4:30 PM</span>
-        </div>
-
-        <div class="game">
-            <img src="/images/logos/cardinals.png" alt="cardinals.png" width="70px" height="70px">
-            <span>Arizona Cardinals</span>
             at
-            <img src="/images/logos/rams.png" alt="rams.png" width="70px" height="70px">
-            <span>Los Angeles Rams</span>
-            <span>Sat 8:15 PM</span>
+            <img src="/images/logos/steelers.png" alt="steelers.png" width="70px" height="70px">
+            <span>Pittsburgh Steelers</span>
+            <span>8:00 PM</span>
         </div>
-
-
 
     </section>
 
@@ -149,11 +108,11 @@
             </div>
             <div class="winners">
                 <span>Week 16</span>
-                <span> -- </span>
+                <span> Bernard M </span>
             </div>
             <div class="winners">
                 <span>Week 17</span>
-                <span> -- </span>
+                <span> Ken D </span>
             </div>
             <div class="winners">
                 <span>Week 18</span>

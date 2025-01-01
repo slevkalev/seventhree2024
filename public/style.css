@@ -21,6 +21,9 @@ body {
 .logo {
     font-size: 24px;
     font-weight: 700;
+    text-decoration: none;
+    color: white;
+
 }
 
 .login-div {
@@ -44,7 +47,8 @@ body {
     max-width: 350px;
 }
 
-
+.shade{
+}
 
 .nav-link {
     color: white;
@@ -293,8 +297,11 @@ h3 {
 
 .checkmark{
     display: flex;
+    width:100%;
+    justify-content: center;
     gap:1em;
     margin-top: .5em;
+    background-color: #ddd;
 }
 
 /* Responsive adjustments */

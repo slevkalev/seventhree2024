@@ -22,7 +22,7 @@
 </head>
     <body>
         <div class="header">
-            <span class="logo">Seventhree.ca</span>
+            <a class="logo" href="http://seventhree.ca">Seventhree.ca</a>
 
             <div class="login-div">
                 @guest
