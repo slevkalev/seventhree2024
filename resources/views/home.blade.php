@@ -11,7 +11,34 @@
     <section class="news">
         <h3>News</h3>
 
-        <span>Week 18</span>
+        <br>
+        <i>Congratulations
+            <br>
+
+
+                <h2>Terri D</h2>
+
+
+            Overall Winner Seventhree.ca NFL Pool 2024</i>
+        <br>
+
+        <p class="thanks">
+            Thank you to everybody for participating in this years Seventhree.ca NFL Pool.  I appreciate your patience at the beginning of the season.  It took a little time for me to get the site up due to the passing of my dad.  I played picks for my dad each week and picked the Bills for max points every week.  I am happy the Bills had a great season and my dad's picks won one week.
+        </p>
+        <p class="thanks">
+            I will be running the pool again next year and for the first time ever I will not be reprogramming the site again...maybe lol.  There will be changes, but mostly cosmetic.
+        </p>
+
+        <p class="thanks">
+            Please remember to let friends know about the pool next year so we can grow the prizes next year.
+        </p>
+
+        <p class="thanks">
+            For those of you interested Seventhree.ca Golf pools will start with the TPC Sawgrass March 13, 2025.
+            I am building the site and will update this page once it is up.
+        </p>
+
+        {{-- <span>Week 18</span>
         <span>16 games this week</span>
 
         <h3>Saturday Games</h3>
@@ -32,14 +59,14 @@
             <img src="/images/logos/steelers.png" alt="steelers.png" width="70px" height="70px">
             <span>Pittsburgh Steelers</span>
             <span>8:00 PM</span>
-        </div>
+        </div> --}}
 
     </section>
 
-    <section>
+    {{-- <section>
         <h3>Rules</h3>
 
-    </section>
+    </section> --}}
 
     <section>
         <h3>Winners</h3>
@@ -116,7 +143,7 @@
             </div>
             <div class="winners">
                 <span>Week 18</span>
-                <span> -- </span>
+                <span> Barney S </span>
             </div>
     </section>
 

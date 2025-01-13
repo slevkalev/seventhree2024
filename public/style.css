@@ -595,3 +595,10 @@ h3 {
 .hide{
     display: none;
 }
+
+
+.thanks{
+    max-width: 60ch;
+    text-align: justify;
+    text-justify: inter-word;
+}
