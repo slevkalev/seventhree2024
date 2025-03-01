@@ -5,7 +5,8 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-    min-width:320px;
+    min-width:20em;
+    line-height: 1.6;
 }
 
 
@@ -13,13 +14,13 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: .6125em 1.25em;
     background-color: #333;
     color: white;
 }
 
 .logo {
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 700;
     text-decoration: none;
     color: white;
@@ -28,7 +29,7 @@ body {
 
 .login-div {
     display: flex;
-    gap: 15px;
+    gap: 1.3125em;
 }
 
 .loss{
@@ -44,7 +45,7 @@ body {
 }
 
 .mw350{
-    max-width: 350px;
+    max-width: 21.875em;
 }
 
 .shade{
@@ -61,7 +62,7 @@ body {
 }
 
 .container {
-    padding: 20px;
+    padding: 1.25em;
     display: flex;
     flex-direction: column;
     /* justify-content: center;
@@ -97,8 +98,8 @@ button{
 
 .nav-block {
     display: flex;
-    gap: 15px;
-    margin-bottom: 20px;
+    gap: 1em;
+    margin-bottom: 1.25em;
     justify-content: center;
 }
 
@@ -120,12 +121,12 @@ button{
 /* Section styles */
 
 section {
-    margin-bottom: 20px;
+    margin-bottom: 1.25em;
 }
 
 h1 {
-    font-size: 28px;
-    margin-bottom: 10px;
+    font-size: 1.75rem;
+    margin-bottom: .625em;
 }
 
 .center{
@@ -137,8 +138,8 @@ h2{
 }
 
 h3 {
-    font-size: 22px;
-    margin-bottom: 5px;
+    font-size: 1.375;
+    margin-bottom: .3125em;
 }
 
 
@@ -163,7 +164,7 @@ h3 {
 }
 
 .week-nav{
-    min-width: 300px;
+    min-width: 18.75em;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -182,7 +183,7 @@ h3 {
 
 /* Responsive styles */
 
-@media (max-width: 768px) {
+@media (max-width: 76.5em) {
     .header {
         /* flex-direction: column; */
         align-items: flex-start;
@@ -190,49 +191,49 @@ h3 {
 
     .nav-block {
         flex-direction: row;
-        gap: 10px;
+        gap: .625em;
     }
 
     .nav-block-link {
-        font-size: 18px;
+        font-size: 1.125rem;
     }
 
     h1 {
-        font-size: 24px;
+        font-size:1.5rem;
     }
 
     h3 {
-        font-size: 20px;
+        font-size: 1.25em;
     }
 
     .login-div {
-        margin-top: 10px;
+        margin-top: .625em;
     }
 }
 
 @media (max-width: 480px) {
     .logo {
-        font-size: 20px;
+        font-size: 1.25em;
     }
 
     .nav-link {
-        font-size: 14px;
+        font-size: .875rem;
     }
 
     .nav-block-link {
-        font-size: 14px;
+        font-size: .875rem;
     }
 
     h1 {
-        font-size: 22px;
+        font-size: 1.375rem;
     }
 
     h3 {
-        font-size: 18px;
+        font-size: 1.125rem;
     }
 
     .header {
-        padding: 10px;
+        padding: .625em;
     }
 
     .board{
@@ -247,8 +248,8 @@ h3 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     /* grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); Responsive columns */
-    gap: 20px; /* Space between grid items */
-    padding: 20px;
+    gap: 1.25em; /* Space between grid items */
+    padding: 1.25em;
 }
 
 .game {
@@ -258,8 +259,8 @@ h3 {
     align-items: center;
     background-color: white; /* Background color for game cards */
     border: 1px solid #ddd; /* Border around each game card */
-    border-radius: 8px; /* Rounded corners */
-    padding: 15px;
+    border-radius: .5em; /* Rounded corners */
+    padding: 1.3125em;
     text-align: center;
     text-decoration: none; /* Remove default link styling */
     color: black; /* Text color */
@@ -267,8 +268,8 @@ h3 {
 }
 
 .game:hover {
-    transform: translateY(-5px); /* Slight lift on hover */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+    transform: translateY(-.3125em); /* Slight lift on hover */
+    box-shadow: 0 4px .625em rgba(0, 0, 0, 0.2); /* Shadow on hover */
 }
 
 .game-team {
@@ -276,7 +277,7 @@ h3 {
     align-items: center;
     justify-content: flex-start;
     gap: 1em;
-    margin-bottom: 10px; /* Space between teams and date */
+    margin-bottom: .625em; /* Space between teams and date */
 }
 
 .game-team-name{
@@ -287,11 +288,11 @@ h3 {
 }
 
 .game-team img {
-    margin-right: 10px; /* Space between image and text */
+    margin-right: .625em; /* Space between image and text */
 }
 
 .game-date {
-    font-size: 14px; /* Size for the date */
+    font-size: .875rem; /* Size for the date */
     color: #555; /* Color for the date text */
 }
 
@@ -305,7 +306,7 @@ h3 {
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width: 76.5em) {
     #games {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust columns for smaller screens */
     }
@@ -313,11 +314,11 @@ h3 {
 
 @media (max-width: 480px) {
     .game {
-        padding: 10px; /* Smaller padding for mobile */
+        padding: .625em; /* Smaller padding for mobile */
     }
 
     .game-date {
-        font-size: 12px; /* Smaller date text for mobile */
+        font-size: .75rem; /* Smaller date text for mobile */
     }
 }
 
@@ -326,7 +327,7 @@ h3 {
 .pickinfo-game{
     background-color: #bbb;
     color: white;
-    min-width: 300px;
+    min-width: 18.75em;
     padding-left: .25em;
 }
 
@@ -342,7 +343,7 @@ h3 {
     display: flex;
     align-items: center;
     gap:1em;
-    min-width: 125px;
+    min-width: 12.3125em;
 }
 
 .x-button{
@@ -354,7 +355,7 @@ h3 {
 
 #pick-form{
     padding: 1em;
-    width: 320px;
+    width: 31.25em;
 }
 
 #pick-form p{
@@ -408,8 +409,8 @@ h3 {
 }
 
 .team-logo{
-    width: 75px;
-    height: 75px;
+    width: 7.3125em;
+    height: 7.3125em;
     object-fit: cover;
 }
 
@@ -438,7 +439,7 @@ h3 {
 }
 
 .bottom-div{
-    width: 320px;
+    width: 31.25em;
     display: flex;
     justify-content: center;
     gap: 1em;
@@ -448,7 +449,7 @@ h3 {
     padding: .5rem 1rem;
     color: white;
     font-family: 'Kanit', sans-serif;
-    border-radius: 10px;
+    border-radius: .625em;
     font-size: medium;
 
 }
@@ -482,7 +483,7 @@ h3 {
     display: flex;
     overflow: scroll;
     width: 100%;
-    max-width: 1220px;
+    max-width: 121.25em;
     position: relative;
     margin-left: auto;
     margin-right: auto;
@@ -494,7 +495,7 @@ h3 {
     position: sticky;
     background-color: white;
     left: 0;
-    border-radius: 10px 0 0 10px;
+    border-radius: .625em 0 0 .625em;
     padding-left: 1em;
     /* padding-right: 1em; */
     border: 1px solid black;
@@ -502,7 +503,7 @@ h3 {
 
 .board-right{
     background-color: white;
-    border-radius: 0 10px 10px 0;
+    border-radius: 0 .625em .625em 0;
     padding-right: 1em;
     border: 1px solid black;
 }
@@ -571,7 +572,7 @@ h3 {
 
 .label-input-grp input{
     flex: 1;
-    padding: 5px;
+    padding: .3125em;
 }
 
 
@@ -601,4 +602,410 @@ h3 {
     max-width: 60ch;
     text-align: justify;
     text-justify: inter-word;
+}
+
+
+
+/* GOLF STYLES */
+
+.form-check{
+    display: flex;
+    width: 100%;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+input[type="checkbox"]{
+    transform: scale(1.5);
+    margin-right: 2rem;
+}
+
+.selections{
+    min-height: 7rem;
+    border: 1px solid black;
+    width: 20em;
+    margin-bottom: 2em;
+}
+
+.golf-logos{
+    height: 15em;
+    width: 15em;
+    object-fit: contain;
+    margin: 1em;
+}
+
+.schedule{
+    display: flex;
+}
+
+
+.golf-logo{
+    object-fit: cover;
+}
+
+.schedule-info{
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.pool-card{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.golfer-list{
+    margin: 1em 0;
+    width: 95vw;
+
+}
+
+.golfer-search{
+    width: 21em;
+    padding: .5rem 1rem;
+}
+
+/* Basic link styling */
+.golfer-link {
+    display: block; /* Make the entire area clickable */
+    max-width: 20em;
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit text color from parent */
+    margin-bottom: .625em; /* Add some spacing between links */
+    border: 1px solid #ccc; /* Add a subtle border */
+    border-radius: .3125em; /* Rounded corners */
+    overflow: hidden; /* Prevent content from overflowing */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .golfer-link:hover {
+    background-color: #d8ecf6; /* Light background on hover */
+    color:#007BFF;
+    box-shadow: 0 2px .3125em rgba(0, 0, 0, 0.1); /* Subtle shadow on hover */
+  }
+
+  /* Golfer Information Container */
+  .golfer-info {
+    padding: .625em;
+  }
+
+  /* Primary Information (Name, Score, Thru) */
+  .golfer-info_primary {
+    display: flex;
+    justify-content: space-between; /* Distribute space evenly */
+    align-items: center; /* Vertically align items */
+    font-size: .9em; /* Slightly larger font size */
+    font-weight: 500; /* Semi-bold font weight */
+    margin-bottom: .3125em; /* Add a little space below */
+  }
+
+  .golfer-info_primary span {
+    padding: .3125em .5em; /* Add some padding to each span */
+    border-radius: 3px; /* Slightly rounded corners */
+  }
+
+  .golfer-name {
+    font-weight: bold; /* Make golfer name bolder */
+  }
+
+  /* Secondary Information (Round Scores) */
+  .golfer-info_secondary {
+    display: flex;
+    flex-wrap: wrap; /* Allow spans to wrap to the next line */
+    gap: .3125em;
+    font-size: 0.8em;
+    color: #666; /* Slightly muted color */
+  }
+
+  .golfer-info_secondary span {
+    padding: 3px .3125em;
+    background-color: #eee;
+    border-radius: 3px;
+  }
+
+  /* Additional Information (Active Status) */
+  .golfer-info_third {
+    display: flex;
+    flex-wrap: wrap; /* Allow spans to wrap to the next line */
+    gap: .3125em;
+    font-size: 0.9em;
+    color: #666; /* Slightly muted color */
+    margin-top: .3125em;
+  }
+
+  .golfer-info_third span {
+    padding: 3px .3125em;
+    background-color: #eee;
+    border-radius: 3px;
+  }
+
+.golf-score{
+    min-width: 3ch;
+}
+
+
+.golfer-record {
+    display: flex;
+    flex-direction: column; /* Stack each label-input pair vertically */
+    gap: .625em; /* Add spacing between each row */
+}
+
+.golfer-record div {
+    display: flex;
+    align-items: center; /* Align label and input vertically */
+    gap: .625em; /* Add spacing between label and input */
+}
+
+.golfer-record label {
+    width: 80px; /* Set a fixed width for labels to align them */
+    text-align: right; /* Align text of labels to the right */
+}
+
+.golfer-record input {
+    flex: 1; /* Allow inputs to grow and take up remaining space */
+    padding: .3125em; /* Add some padding for better usability */
+    border: 1px solid #ccc; /* Add a border for inputs */
+    border-radius: 4px; /* Slightly round the corners of inputs */
+}
+
+.name-score{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* Golf Leaderboard styles */
+
+
+/* Entry details container */
+.entry-details, .golfer-details, .golf-details {
+    background-color: #ffffff;
+    border-radius: .5em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.25em;
+    overflow: hidden;
+    min-width: 22em;
+}
+
+/* Entry summary (collapsed view) */
+.entry-summary, .golfer-summary, .golf-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.3125em 1.25em;
+    cursor: pointer;
+    background-color: #f8f8f8;
+    transition: background-color 0.3s ease;
+}
+
+.entry-summary:hover, .golfer-summary:hover, .golf-summary:hover {
+    background-color: #e8e8e8;
+}
+
+.entry-player-name {
+    /* font-weight: bold; */
+    font-size: 1.2rem;
+    min-width: 13rem;
+    text-align: left;
+}
+
+.entry-player-score {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* Entry selections (expanded view) */
+.entry-selections {
+    padding: 1.3125em 1.25em;
+}
+
+.selected {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .625em 0;
+    border-bottom: 1px solid #eee;
+}
+
+.selected:last-child {
+    border-bottom: none;
+}
+
+.selected-name {
+    font-size: 16px;
+}
+
+.selected-score {
+    font-size: 16px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* Custom styling for the disclosure triangle */
+details summary::-webkit-details-marker,
+details summary::marker {
+    display: none;
+}
+
+details summary:before {
+    content: '▶';
+    margin-right: .625em;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary:before {
+    transform: rotate(90deg);
+}
+
+/* tournament board styles */
+
+.golfer-tournament-info{
+    display: flex;
+    flex-direction: row;
+    padding-left: 1rem;
+}
+
+.round{
+    padding-right: 1rem;
+}
+
+.tournament-golfer {
+    text-align: left;
+    min-width: 14rem
+}
+
+.thru, .total-score{
+    min-width: 3ch;
+}
+
+.thru{
+    padding-left: 1rem;
+}
+
+.total-score{
+    background-color: black;
+    color: white;
+}
+
+.inverted{
+    width: 18em;
+    background-color: #333;
+    color:#eee;
+    margin-bottom: 1em;
+
+}
+
+
+
+/* tests styles for home */
+
+/* General Styles */
+/* body {
+    font-family: 'Roboto', sans-serif; Use Roboto as the primary font
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+} */
+
+
+
+
+/* Pools Section */
+.pools {
+    margin-top: 1.25em;
+}
+
+.schedule {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.3125em;
+    padding: 1.3125em;
+    background-color: #fff;
+    border-radius: .5em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Override center alignment */
+}
+
+.golf-logo {
+    margin-right: 1.25em;
+    border-radius: .3125em; /* Add a subtle border-radius */
+}
+
+.schedule-info span {
+    display: block;
+}
+
+.schedule-info span:first-child {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+/* Details Styles */
+.golf-details {
+    margin-top: 1.25em;
+    background-color: #fff;
+    border-radius: .5em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1.3125em;
+}
+
+.golf-summary {
+    font-weight: bold;
+    cursor: pointer;
+    padding: .625em;
+    background-color: #f8f8f8;
+    border-radius: .3125em;
+    transition: background-color 0.3s;
+    outline: none; /* Remove default focus outline */
+}
+
+.golf-summary:hover {
+    background-color: #e8e8e8;
+}
+
+details ul {
+    list-style-type: disc; /* Ensure list style is visible */
+}
+
+/* Typography */
+h1, h2, h3 {
+    margin-bottom: 1.3125em;
+    color: #222;
+}
+
+p {
+    margin-bottom: .625em;
+}
+
+/* Utility Class for Centering (override) */
+.center {
+    text-align: center;
+}
+
+/* Responsive Design (Optional) */
+@media (max-width: 76.5em) {
+    .container {
+        width: 95%;
+    }
+
+    .schedule {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        text-align: center;
+    }
+
+    .golf-logo {
+        margin-right: 0;
+        margin-bottom: .625em;
+    }
+
+    .login-div {
+        flex-direction: column; /*Stack elements on smaller screens*/
+        text-align: center; /*Center elements horizontally*/
+    }
 }

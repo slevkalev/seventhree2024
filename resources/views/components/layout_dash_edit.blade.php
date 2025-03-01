@@ -18,7 +18,7 @@
     </style>
     <title>{{ $heading }}</title>
     <link rel="stylesheet" href="../../../style.css">
-    <script src="../../../js/main.js"></script>
+    <script src="../../../js/main.js" defer></script>
 </head>
     <body>
         <div class="header">
@@ -45,7 +45,7 @@
         </div>
         <main>
             <div class="user-div"></div>
-            <div class="container">
+            <div class="container center">
                 {{ $slot }}
             </div>
         </main>

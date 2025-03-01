@@ -11,6 +11,14 @@ use App\Http\Controllers\UserPicksController;
 use App\Http\Controllers\LeaderboardController;
 use App\Http\Controllers\BigboardController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\GolfHomeController;
+use App\Http\Controllers\GolferController;
+use App\Http\Controllers\PlayerController;
+use App\Http\Controllers\GolfLeaderboardController;
+use App\Http\Controllers\GolfEntryConfirmed;
+use App\Http\Controllers\GolfTournamentInfoController;
+use App\Http\Controllers\GolfScoresController;
+
 
 Route::get('/', [HomeController::class, 'home']);
 
@@ -86,3 +94,31 @@ Route::get('/dashboard/picks/{pick}', [FootballPickController::class, 'show']);
 Route::get('/dashboard/picks/{pick}/edit', [FootballPickController::class, 'edit']);
 Route::patch('/dashboard/picks/{pick}', [FootballPickController::class, 'update']);
 Route::delete('/dashboard/picks/{pick}', [FootballPickController::class, 'destroy']);
+
+
+//golfers - dashboard for uploading field data
+Route::get('/golf-dashboard', [GolferController::class, 'index']);
+Route::post('/golf-dashboard',[GolferController::class, 'store']);
+
+//golfer - scores
+Route::get('/golf-scores',[GolfScoresController::class,'index']);
+Route::get('/golf-scores/{golfer}/edit',[GolfScoresController::class, 'edit']);
+Route::patch('/golf-scores/{golfer}',[GolfScoresController::class, 'update']);
+// Route::delete('/golf-scores/{golfer}',[GolfScoresController::class, 'destroy']);
+
+
+//player entry
+Route::get('/golf-entry', [PlayerController::class, 'index']);
+Route::post('/golf-entry',[PlayerController::class, 'store']);
+
+//player entry confirmation page
+Route::get('/golf-entry-confirmed', [GolfEntryConfirmed::class, 'index']);
+
+//golf home
+Route::get('/golf', [GolfHomeController::class, 'index']);
+
+
+//Golf pool leaderboard
+Route::get('/golf-leaderboard',[GolfLeaderboardController::class, 'index']);
+
+Route::get('/golf-tournament',[GolfTournamentInfoController::class, 'index']);

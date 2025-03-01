@@ -44,7 +44,7 @@ class BigboardController extends Controller
         $weeks = Helper::schedule();
         // $weekId = Helper::get_week_id($today, $weeks);
         $weekId = $week;
-        $numberOfGames = $weeks[$week - 1]['nog'];
+        $numberOfGames = $week-1== -1? 16 : $weeks[$week - 1]['nog'];
         $games = Game::all();
         $picks = Pick::all();
         $teams = Team::all();

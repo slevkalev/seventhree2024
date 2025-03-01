@@ -75,4 +75,42 @@ class Helper
             return $sum;
         }
 
+    public static function golfTournaments() {
+
+        return [
+            ['tournament_name'=>'The Players Championship','start'=>'3/13/2025', 'end'=>'3/16/2025','current'=>0, 'image'=>'https://res.cloudinary.com/pgatour-prod/d_tournaments:logos:R000.png/tournaments/logos/R011.png'],
+            ['tournament_name'=>'The Masters','start'=>'4/10/2025', 'end'=>'4/13/2025','current'=>1, 'image'=>'https://icon2.cleanpng.com/20180510/xtq/avsyhrlrh.webp'],
+            ['tournament_name'=>'The PGA Championship','start'=>'5/15/2025', 'end'=>'5/18/2025','current'=>0, 'image'=>'https://cdn.prod.website-files.com/630fbdaf6751e7b380e52e6e/672cf2ffa0c38e6abdcf8f7d_25CH_Quail_Holllow_4C.png'],
+            ['tournament_name'=>'The US Open','start'=>'6/12/2025', 'end'=>'6/15/2025','current'=>0, 'image'=>'https://www.msgpromotions.com/wp-content/uploads/2024/04/2025-USO-Logo-for-MSG-Home-page.png'],
+            ['tournament_name'=>'The Open','start'=>'7/17/2025', 'end'=>'7/20/2025','current'=>0, 'image'=>'https://www.theopen.com/-/media/images/logos/TheOpen_Poster.jpg'],
+        ];
+    }
+
+
+
+
+
+    public static function tournamentField($filename)
+    {
+        $path = public_path("js/{$filename}");
+
+        if (!file_exists($path)) {
+            throw new \Exception("File not found: {$filename}");
+        }
+
+        $jsonContent = file_get_contents($path);
+        $names = json_decode($jsonContent, true);
+
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            throw new \Exception('Invalid JSON: ' . json_last_error_msg());
+        }
+
+        if (!is_array($names)) {
+            throw new \Exception('JSON content is not an array');
+        }
+
+        return $names;
+    }
+
+
 }
