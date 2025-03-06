@@ -120,8 +120,18 @@ button{
 
 /* Section styles */
 
-section {
+/* section {
     margin-bottom: 1.25em;
+    max-width: 20em;
+} */
+
+section {
+    max-width: 20em;
+    margin: 2em auto;
+    padding: 1em;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 h1 {
@@ -1009,3 +1019,64 @@ p {
         text-align: center; /*Center elements horizontally*/
     }
 }
+
+
+/* Section Styling */
+
+
+/* Details Element Styling */
+.golf-details {
+    margin-bottom: 1.5em;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 18em;
+}
+
+.golf-summary {
+    padding: 1em;
+    background-color: #4a90e2;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    max-width: 18em;
+}
+
+.golf-summary:hover {
+    background-color: #3a7bc8;
+}
+
+.golf-details[open] .golf-summary {
+    background-color: #3a7bc8;
+}
+
+.golf-details ul, .golf-details ol {
+    padding: 1em 1em 1em 3em;
+    background-color: white;
+    margin: 0;
+}
+
+.golf-details li {
+    margin-bottom: 0.5em;
+}
+
+.golf-details ol {
+    list-style-type: lower-alpha;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    section {
+        padding: 0.5em;
+    }
+
+    .golf-summary {
+        padding: 0.75em;
+    }
+
+    .golf-details ul, .golf-details ol {
+        padding: 0.75em 0.75em 0.75em 2em;
+    }
+}
+
