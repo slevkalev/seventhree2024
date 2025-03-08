@@ -12,8 +12,14 @@ use Illuminate\Support\Facades\Auth;
 class PlayerController extends Controller
 {
     public function index() {
-        $today = Carbon::now()->format('m/d/Y');
+        $today = Carbon::now();
         $tournament = Helper::golfTournaments()[0];
+        $start_date = Carbon::parse($tournament['start']);
+        // dd($today->greaterThan($start_date));
+
+        if($today->greaterThan($start_date)){
+            return redirect('golf-leaderboard');
+        }
 
 
         $field = Helper::tournamentField("field.json");
