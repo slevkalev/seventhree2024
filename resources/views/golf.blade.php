@@ -44,7 +44,7 @@
     <section>
         <details class="golf-details">
             <summary class="golf-summary">Pool Rules</summary>
-            <ul style="margin-left:2em;">
+            <ul >
                  <li>Each entry is $10</li>
                  <li>Payment through e-transfer to jsnelg@gmail.com</li>
                  <li>Multiple entries is encouraged</li>
@@ -53,7 +53,7 @@
                  <li>Entry score will be the combination of the 4 best scores by selected golfers who make the cut and complete all 4 rounds</li>
                  <li>Entries must be received by midnight the night before the tournament starts.</li>
                  <li>In case of a player withdraws from the tournament prior to their tee time.
-                      <ol style="margin-left:2em;">
+                      <ol>
                            <li>A substitute for this golfer can be requested by texting me.</li>
                            <li>The requested golfer can be picked from the field as long as they have not teed off</li>
                            <li>If a request has not been made in time the entry will continue with the remaining golfers</li>
@@ -63,7 +63,7 @@
        </details>
        <details class="golf-details">
             <summary class="golf-summary">Payouts</summary>
-            <ul style="margin-left:2em;">
+            <ul>
                  <li>Payout breakdown is dependent on the number of entries</li>
                  <li>24 entries or less -- winner take all</li>
                  <li>25-34 entries --  2nd = $50, 1st = the balance</li>
