@@ -946,6 +946,10 @@ details[open] summary:before {
     display: block;
 }
 
+.schedule-info {
+    align-items: center;
+}
+
 .schedule-info span:first-child {
     font-weight: bold;
     font-size: 1.2em;
@@ -994,7 +998,9 @@ p {
 
     .golf-logo {
         margin-right: 0;
+        margin-left: 0;
         margin-bottom: .625em;
+
     }
 
     .login-div {
