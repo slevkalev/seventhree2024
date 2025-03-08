@@ -55,11 +55,16 @@
         })->sortBy(function ($entry) {
             return $entry->total_score['value'];
         });
-
         function formatScore($score){
             if($score > 0) return "+".$score;
             if($score == 0) return "E";
             return $score;
+        }
+
+        function formatThru($thru){
+            if($thru==0) return "";
+            if($thru>0 && $thru<19) return $thru;
+            if($thru>=19) return "F";
         }
 
     @endphp
@@ -68,7 +73,7 @@
         <details class="entry-details">
             <summary class="entry-summary">
                 <span class="entry-player-name">{{ $entry->player_name }}</span>
-                <span class="entry-player-score">{{ $entry->total_score['score'] }}</span>
+                <span class="entry-player-score">{{ formatScore($entry->total_score['score'])}}</span>
             </summary>
 
             <div class="entry-selections">
@@ -80,7 +85,7 @@
                     @endphp
                     <div class="selected">
                         <span class="selected-name">{{ $entry->$selection }}</span>
-                        <span class="selected-score">{{ $score }}</span>
+                        <span class="selected-score">{{ formatScore($score) }}</span>
                     </div>
                 @endfor
             </div>

@@ -5,6 +5,8 @@
 
     <x-nav-block-golf></x-nav-block-golf>
 
+    <section>
+
     <h1>{{ $tournament['tournament_name']}}</h1>
 
 
@@ -19,59 +21,64 @@
     <img src="{{ $tournament['image'] }}" alt="{{ $tournament['tournament_name'] }}" height="300px" width="300px">
     <br>
     <br>
-    <h2>Golf Pool Entry Form</h2>
-
-    <form method="POST" action="/golf-entry">
-        @csrf
-
-        <x-form-field>
-            <x-form-label for="player_name">Full Name</x-form-label>
-            <div class="input-div">
-                <x-form-input name="player_name" id="player_name" type="text" placeholder="Full name" :value="old('player_name')" required />
-
-                <x-form-error name="player_name" />
-
-            </div>
-        </x-form-field>
-
-        <x-form-field>
-            <x-form-label for="email">E-mail</x-form-label>
-            <div class="input-div">
-                <x-form-input name="email" id="email" type="text" placeholder="E-mail" :value="old('email')" required />
-
-                <x-form-error name="email" />
-
-            </div>
-        </x-form-field>
-
-        <x-form-field>
-            <x-form-label for="phone">Phone number</x-form-label>
-            <div class="input-div">
-                <x-form-input name="phone" id="phone" type="text" placeholder="Phone #" :value="old('phone')" required />
-
-                <x-form-error name="phone" />
-
-            </div>
-        </x-form-field>
 
 
-        <h3>Select Golfers</h3>
-        <br>
+        <h2>Golf Pool Entry Form</h2>
 
-        @foreach($field as $index => $golfer)
-            <div class="form-check">
-                <input class="checkbox" name="golfers[]" type="checkbox" id="golfer{{ $index }}" value="{{ $golfer }}">
-                <label for="golfer{{ $index }}">{{ $golfer }}</label>
-            </div>
-        @endforeach
+        <form method="POST" action="/golf-entry">
+            @csrf
+
+            <x-form-field>
+                <x-form-label for="player_name">Full Name</x-form-label>
+                <div class="input-div">
+                    <x-form-input name="player_name" id="player_name" type="text" placeholder="Full name" :value="old('player_name')" required />
+
+                    <x-form-error name="player_name" />
+
+                </div>
+            </x-form-field>
+
+            <x-form-field>
+                <x-form-label for="email">E-mail</x-form-label>
+                <div class="input-div">
+                    <x-form-input name="email" id="email" type="text" placeholder="E-mail" :value="old('email')" required />
+
+                    <x-form-error name="email" />
+
+                </div>
+            </x-form-field>
+
+            <x-form-field>
+                <x-form-label for="phone">Phone number</x-form-label>
+                <div class="input-div">
+                    <x-form-input name="phone" id="phone" type="text" placeholder="Phone #" :value="old('phone')" required />
+
+                    <x-form-error name="phone" />
+
+                </div>
+            </x-form-field>
 
 
-        <h3>Your Selections</h3>
-        <div class="selections"></div>
+            <h3>Select Golfers</h3>
+            <br>
 
-        <button type="submit" disabled>Submit</button>
+            @foreach($field as $index => $golfer)
+                <div class="form-check">
+                    <input class="checkbox" name="golfers[]" type="checkbox" id="golfer{{ $index }}" value="{{ $golfer }}">
+                    <label for="golfer{{ $index }}">{{ $golfer }}</label>
+                </div>
+            @endforeach
 
-    </form>
+
+            <h3>Your Selections</h3>
+            <div class="selections"></div>
+
+            <button type="submit" disabled>Submit</button>
+
+        </form>
+
+    </section>
+
     @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
