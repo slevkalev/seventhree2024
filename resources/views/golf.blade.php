@@ -23,6 +23,8 @@
             $start_date = \Carbon\Carbon::createFromFormat('m/d/Y', $tournament['start'])->format('F d');
             $end_date = \Carbon\Carbon::createFromFormat('m/d/Y', $tournament['end'])->format('F d ');
 
+            $entry_button = $tournament['current'] == 1 ? '<a class="golf-entry-btn" href="golf-entry">Create Entry</a>' : '';
+
         @endphp
 
         <div class="schedule">
@@ -31,9 +33,13 @@
             <div class="schedule-info">
                 <span>{{ $tournament['tournament_name'] }}</span>
                 <span>{{ $start_date }} to {{ $end_date }}</span>
+                @php
+                    echo $entry_button
+                @endphp
             </div>
 
         </div>
+
 
         @endforeach
 
