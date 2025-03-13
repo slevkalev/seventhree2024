@@ -5,15 +5,6 @@
 
     <x-nav-block-golf></x-nav-block-golf>
 
-    <h1>Golfer Scores Admin</h1>
-
-
-    <div class="pools"></div>
-
-    <input class="golfer-search" type="text" placeholder="Search">
-
-    <div class="golfer-list">
-
     @php
 
         function formatScore($score){
@@ -29,6 +20,17 @@
         }
 
     @endphp
+
+    <h1>Golfer Scores Admin</h1>
+
+
+    <div class="pools"></div>
+
+    <input class="golfer-search" type="text" placeholder="Search">
+
+    <div class="golfer-list">
+
+
 
     @foreach ($golfers as $golfer )
 

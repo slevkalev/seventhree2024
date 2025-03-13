@@ -706,6 +706,15 @@ input[type="checkbox"]{
     padding: .5rem 1rem;
 }
 
+
+.current-standings{
+    display: flex;
+    justify-content: space-between;
+    min-width: 20em;
+}
+
+
+
 /* Basic link styling */
 .golfer-link {
     display: block; /* Make the entire area clickable */
@@ -806,7 +815,8 @@ input[type="checkbox"]{
 
 .golfer-record input {
     flex: 1; /* Allow inputs to grow and take up remaining space */
-    padding: .3125em; /* Add some padding for better usability */
+    padding: .5em 1em; /* Add some padding for better usability */
+    margin: .5em 0;
     border: 1px solid #ccc; /* Add a border for inputs */
     border-radius: 4px; /* Slightly round the corners of inputs */
 }

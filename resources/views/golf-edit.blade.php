@@ -10,17 +10,17 @@
 
         <h1>Golfer Score Edit</h1>
 
-        <div class="pools"></div>
+
 
 
         <div class="result">
-
+{{--
         <div class="round-selector">
             <button onclick="setRound(1)">Round 1</button>
             <button onclick="setRound(2)">Round 2</button>
             <button onclick="setRound(3)">Round 3</button>
             <button onclick="setRound(4)">Round 4</button>
-        </div>
+        </div> --}}
 
         @php
             $score = $golfer->r1 + $golfer->r2 + $golfer->r3 + $golfer->r4

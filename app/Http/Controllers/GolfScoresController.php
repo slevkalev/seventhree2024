@@ -14,17 +14,24 @@ class GolfScoresController extends Controller
 
     public function index(){
 
-        $golfers=Golfer::all();
+        $golfers = Golfer::all();
+
+        $active_golfers = Golfer::where('active', 1)->get();
         // dd($golfers);
 
-        return view("golf-scores", ["golfers"=>$golfers]);
+        return view("golf-scores", [
+            "golfers"=>$golfers,
+            "active_golfers"=>$active_golfers,
+        ]);
     }
 
 
 
     public function edit(Golfer $golfer){
 
-        return view("golf-edit", ["golfer"=>$golfer]);
+        return view("golf-edit", [
+            "golfer"=>$golfer,
+        ]);
 
     }
 
