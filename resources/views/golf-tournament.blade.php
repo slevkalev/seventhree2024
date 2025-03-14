@@ -79,7 +79,7 @@
 
     <script>
         function sortGolfersByScore() {
-            const container = document.querySelector('.tournament-details'); // Adjust this selector as needed
+            const container = document.querySelector('.tournament-leaderboard'); // Adjust this selector as needed
             const golferDetails = Array.from(container.querySelectorAll('.golfer-details'));
 
             golferDetails.sort((a, b) => {
