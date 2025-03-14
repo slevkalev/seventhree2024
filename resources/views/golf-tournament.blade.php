@@ -77,4 +77,28 @@
 
     </div>
 
+    <script>
+        function sortGolfersByScore() {
+            const container = document.querySelector('.tournament-details'); // Adjust this selector as needed
+            const golferDetails = Array.from(container.querySelectorAll('.golfer-details'));
+
+            golferDetails.sort((a, b) => {
+                const scoreA = parseScore(a.querySelector('.total-score').textContent);
+                const scoreB = parseScore(b.querySelector('.total-score').textContent);
+                return scoreA - scoreB;
+            });
+
+            golferDetails.forEach(detail => container.appendChild(detail));
+        }
+
+        function parseScore(score) {
+            if (score === 'E') return 0;
+            return parseInt(score, 10) || 0;
+        }
+
+        // Call the function to sort
+        sortGolfersByScore();
+
+    </script>
+
 </x-layout>
