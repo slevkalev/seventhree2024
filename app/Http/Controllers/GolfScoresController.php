@@ -35,7 +35,8 @@ class GolfScoresController extends Controller
             "golfers"=>$golfers,
             "active_golfers"=>$active_golfers,
             "unique_golfers"=>$uniqueSelections,
-            "number_of"=>$uniqueSelections->count()
+            "number_of"=>$uniqueSelections->count(),
+            "number_active"=>$active_golfers->count()
         ]);
     }
 
