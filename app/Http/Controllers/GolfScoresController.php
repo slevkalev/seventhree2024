@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Helper\Helper;
 use Carbon\Carbon;
 use App\Models\Golfer;
+use App\Models\Player;
 
 class GolfScoresController extends Controller
 {
@@ -19,9 +20,22 @@ class GolfScoresController extends Controller
         $active_golfers = Golfer::where('active', 1)->get();
         // dd($golfers);
 
+        $uniqueSelections = Player::select('selection1', 'selection2', 'selection3', 'selection4', 'selection5', 'selection6')
+        ->get()
+        ->flatMap(function ($player) {
+            return [$player->selection1, $player->selection2, $player->selection3, $player->selection4, $player->selection5, $player->selection6];
+        })
+        ->unique()
+        ->values();
+
+        // dd($uniqueSelections);
+
+
         return view("golf-scores", [
             "golfers"=>$golfers,
             "active_golfers"=>$active_golfers,
+            "unique_golfers"=>$uniqueSelections,
+            "number_of"=>$uniqueSelections->count()
         ]);
     }
 

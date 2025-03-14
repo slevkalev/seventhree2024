@@ -23,8 +23,8 @@
 
     <h1>Golfer Scores Admin</h1>
 
+        <div>Golfers selected: {{$number_of}}</div>
 
-    <div class="pools"></div>
 
     <input class="golfer-search" type="text" placeholder="Search">
 
