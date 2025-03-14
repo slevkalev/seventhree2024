@@ -45,15 +45,17 @@
     @foreach ($golfers as $golfer )
 
         @php
-            $score = $golfer->r1 + $golfer->r2 + $golfer->r3 + $golfer->r4
+            $cutWeight= $golfer->golfer_status == 0? 0:100;
+
+            $score = $golfer->r1 + $golfer->r2 + $golfer->r3 + $golfer->r4 + $cutWeight
         @endphp
 
         <a href="golf-scores/{{ $golfer->id}}/edit" class="golfer-link">
-            <div class="golfer-info">
+            <div class="golfer-info" style= "color: {{$golfer->active == 1? 'limegreen': 'black' }}">
                 <div class="golfer-info_primary">
                     <span class="golfer-name">{{ $golfer->golfer_name }}</span>
                     <div>
-                        <span class="golfer-score">{{ formatScore($score) }}</span>
+                        <span class="golfer-score">{{$golfer->golfer_status == 0 ? formatScore($score) : "Cut" }}</span>
                         <span>{{ formatThru($golfer->round_status==null? 0: $golfer->round_status) }}</span>
                     </div>
                 </div>
