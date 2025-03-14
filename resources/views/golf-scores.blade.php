@@ -13,8 +13,9 @@
             return $score;
         }
 
-        function formatThru($thru){
-            if($thru==0) return "";
+        function formatThru($thru, $active){
+            if($active==0) return "";
+            if($thru==0) return "--";
             if($thru>0 && $thru<19) return $thru;
             if($thru>=19) return "F";
         }
@@ -56,7 +57,7 @@
                     <span class="golfer-name">{{ $golfer->golfer_name }}</span>
                     <div>
                         <span class="golfer-score">{{$golfer->golfer_status == 0 ? formatScore($score) : "Cut" }}</span>
-                        <span>{{ formatThru($golfer->round_status==null? 0: $golfer->round_status) }}</span>
+                        <span>{{ formatThru($golfer->round_status==null? 0: $golfer->round_status, $golfer->active) }}</span>
                     </div>
                 </div>
                 <div class="golfer-info_secondary">
