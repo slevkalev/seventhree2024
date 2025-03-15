@@ -85,7 +85,7 @@
                     @endphp
                     <div class="selected">
                         <span class="selected-name">{{ $entry->$selection }}</span>
-                        <span class="selected-score">{{ formatScore($score) }}</span>
+                        <span class="selected-score">{{ $golfer->golfer_status==0? formatScore($score) : 'Cut' }}</span>
                     </div>
                 @endfor
             </div>
