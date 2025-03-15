@@ -23,13 +23,14 @@
     @endphp
 
     <h1>Golfer Scores Admin</h1>
-    @foreach ($unique_golfers as $active_golfer)
+
+    {{-- @foreach ($unique_golfers as $active_golfer)
 
         <div>{{$active_golfer}}</div>
 
 
 
-@endforeach
+    @endforeach --}}
 
         <div>Golfers selected: {{$number_of}}</div>
         <div>Golfers active: {{$number_active}}</div>
@@ -74,6 +75,7 @@
         </a>
 
     @endforeach
+
     </div>
     <script>
 
