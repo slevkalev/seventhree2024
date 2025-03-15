@@ -879,7 +879,7 @@ input[type="checkbox"]{
 
 .selected {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
     padding: .625em 0;
     border-bottom: 1px solid #eee;
@@ -890,13 +890,24 @@ input[type="checkbox"]{
 }
 
 .selected-name {
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 .selected-score {
-    font-size: 16px;
+    min-width: 4ch;
+    font-size: 1rem;
     font-weight: bold;
     color: #2c3e50;
+    margin-left:auto;
+
+}
+
+.selected-thru{
+    min-width: 3ch;
+    font-size: 1rem;
+    margin-left: 1em;
+
+
 }
 
 /* Custom styling for the disclosure triangle */

@@ -86,6 +86,7 @@
                     <div class="selected">
                         <span class="selected-name">{{ $entry->$selection }}</span>
                         <span class="selected-score">{{ $golfer->golfer_status==0? formatScore($score) : 'Cut' }}</span>
+                        <span class="selected-thru">{{ formatThru($golfer->round_status) }}</span>
                     </div>
                 @endfor
             </div>
