@@ -28,7 +28,21 @@ class GolfScoresController extends Controller
         ->unique()
         ->values();
 
-        // dd($uniqueSelections);
+
+        $made_the_cut = Golfer::where('active', 1)
+            ->where('golfer_status', 0)
+            ->select('id', 'golfer_name', 'r1', 'r2', 'r3', 'r4', 'round_status', 'active')
+            ->get()
+            ->map(function ($golfer) {
+                $golfer->total_score = $golfer->r1 + $golfer->r2 + $golfer->r3 + $golfer->r4;
+                return $golfer;
+            })->sortBy('total_score');
+
+
+
+
+
+        // dd($made_the_cut);
 
 
         return view("golf-scores", [
@@ -36,7 +50,9 @@ class GolfScoresController extends Controller
             "active_golfers"=>$active_golfers,
             "unique_golfers"=>$uniqueSelections,
             "number_of"=>$uniqueSelections->count(),
-            "number_active"=>$active_golfers->count()
+            "number_active"=>$active_golfers->count(),
+            "made_the_cut"=>$made_the_cut->count(),
+            "weekend_golfers"=>$made_the_cut
         ]);
     }
 

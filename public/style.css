@@ -695,9 +695,10 @@ input[type="checkbox"]{
     flex-wrap: wrap;
 }
 
-.golfer-list{
+.golfer-list, .active-golfer-list{
     margin: 1em 0;
     width: 95vw;
+    padding-bottom: 2em;
 
 }
 
@@ -716,7 +717,7 @@ input[type="checkbox"]{
 
 
 /* Basic link styling */
-.golfer-link {
+.golfer-link, .active-golfer-link {
     display: block; /* Make the entire area clickable */
     max-width: 20em;
     text-decoration: none; /* Remove underline */
@@ -730,19 +731,19 @@ input[type="checkbox"]{
     margin-right: auto;
   }
 
-  .golfer-link:hover {
+  .golfer-link:hover, .active-golfer-link:hover {
     background-color: #d8ecf6; /* Light background on hover */
     color:#007BFF;
     box-shadow: 0 2px .3125em rgba(0, 0, 0, 0.1); /* Subtle shadow on hover */
   }
 
   /* Golfer Information Container */
-  .golfer-info {
+  .golfer-info, .active-golfer-info {
     padding: .625em;
   }
 
   /* Primary Information (Name, Score, Thru) */
-  .golfer-info_primary {
+  .golfer-info_primary, .active-golfer-info_primary {
     display: flex;
     justify-content: space-between; /* Distribute space evenly */
     align-items: center; /* Vertically align items */
@@ -751,12 +752,12 @@ input[type="checkbox"]{
     margin-bottom: .3125em; /* Add a little space below */
   }
 
-  .golfer-info_primary span {
+  .golfer-info_primary span, .active-golfer-info_primary span {
     padding: .3125em .5em; /* Add some padding to each span */
     border-radius: 3px; /* Slightly rounded corners */
   }
 
-  .golfer-name {
+  .golfer-name, .active-golfer-name {
     font-weight: bold; /* Make golfer name bolder */
   }
 

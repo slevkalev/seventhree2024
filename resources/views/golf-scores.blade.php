@@ -24,25 +24,43 @@
 
     <h1>Golfer Scores Admin</h1>
 
-    {{-- @foreach ($unique_golfers as $active_golfer)
-
-        <div>{{$active_golfer}}</div>
-
-
-
-    @endforeach --}}
 
         <div>Golfers selected: {{$number_of}}</div>
         <div>Golfers active: {{$number_active}}</div>
+        <div>Golfers made the cut: {{$made_the_cut }}</div>
+
+    <div>
+        <h3>Acitve golfers</h3>
+
+        <div class="active-golfer-list">
+
+            @foreach ($weekend_golfers as $golfer )
+
+            <a href="golf-scores/{{ $golfer->id}}/edit" class="active-golfer-link">
+                <div class="active-golfer-info">
+                    <div class="active-golfer-info_primary">
+                        <span class="active-golfer-name">{{ $golfer->golfer_name }}</span>
+                        <div>
+                            <span class="active-golfer-score">{{ formatScore($golfer->total_score) }}</span>
+                            <span class="active-golfer-thru">{{ formatThru($golfer->round_status, $golfer->active) }}</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            @endforeach
+        </div>
+    </div>
 
 
-    <input class="golfer-search" type="text" placeholder="Search">
+    <h3>Search All Golfers</h3>
+
+
+            <input class="golfer-search" type="text" placeholder="Search">
 
 
 
     <div class="golfer-list">
-
-
 
     @foreach ($golfers as $golfer )
 
@@ -77,6 +95,7 @@
     @endforeach
 
     </div>
+
     <script>
 
                 // Select all golfer links
