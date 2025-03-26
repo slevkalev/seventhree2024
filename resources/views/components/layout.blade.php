@@ -18,7 +18,7 @@
     </style>
     <title>{{ $heading }}</title>
     <link rel="stylesheet" href="style.css">
-    <script src="js/main.js" defer></script>
+    <script src="js/main.js" type="module" defer></script>
 </head>
     <body>
         <div class="header">
