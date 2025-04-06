@@ -132,6 +132,38 @@
         },
 
         {
+          "last_name" : "Berger",
+          "first_name" : "Daniel",
+          "id" : "40026",
+
+
+          "countryCode" : "USA",
+
+          "countryName" : "United States",
+          "display_name" : "D.Berger",
+          "name" : "Daniel Berger",
+          "sort_name" : "berger",
+          "age" : "31",
+          "height" : "6-1",
+          "weight" : "175",
+          "swing" : "Right",
+          "stats" : false,
+          "past_champion" : false,
+
+          "amateur" : false,
+          "Amateur" : "",
+          "first_masters" : false,
+
+          "international" : false,
+          "masters_wins" : "",
+          "real_player" : true,
+          "dq" : false,
+          "wd" : false,
+          "share_url" : "https://www.masters.com/en_US/players/player_40026.html",
+          "image": false
+        },
+
+        {
           "last_name" : "Bezuidenhout",
           "first_name" : "Christiaan",
           "id" : "45522",
@@ -352,6 +384,38 @@
           "dq" : false,
           "wd" : false,
           "share_url" : "https://www.masters.com/en_US/players/player_32070.html",
+          "image": false
+        },
+
+        {
+          "last_name" : "Canter",
+          "first_name" : "Laurie",
+          "id" : "34362",
+
+
+          "countryCode" : "ENG",
+
+          "countryName" : "England",
+          "display_name" : "L. Canter",
+          "name" : "Laurie Canter",
+          "sort_name" : "canter",
+          "age" : "35",
+          "height" : "6-3",
+          "weight" : "",
+          "swing" : "Right",
+          "stats" : false,
+          "past_champion" : false,
+
+          "amateur" : false,
+          "Amateur" : "",
+          "first_masters" : true,
+
+          "international" : true,
+          "masters_wins" : "",
+          "real_player" : true,
+          "dq" : false,
+          "wd" : false,
+          "share_url" : "https://www.masters.com/en_US/players/player_34362.html",
           "image": false
         },
 
@@ -1316,6 +1380,38 @@
         },
 
         {
+          "last_name" : "Jaeger",
+          "first_name" : "Stephan",
+          "id" : "36799",
+
+
+          "countryCode" : "GER",
+
+          "countryName" : "Germany",
+          "display_name" : "S. Jaeger",
+          "name" : "Stephan Jaeger",
+          "sort_name" : "jaeger",
+          "age" : "35",
+          "height" : "5-9",
+          "weight" : "",
+          "swing" : "Right",
+          "stats" : false,
+          "past_champion" : false,
+
+          "amateur" : false,
+          "Amateur" : "",
+          "first_masters" : false,
+
+          "international" : true,
+          "masters_wins" : "",
+          "real_player" : true,
+          "dq" : false,
+          "wd" : false,
+          "share_url" : "https://www.masters.com/en_US/players/player_36799.html",
+          "image": false
+        },
+
+        {
           "last_name" : "Johnson",
           "first_name" : "Dustin",
           "id" : "30925",
@@ -1408,6 +1504,38 @@
           "dq" : false,
           "wd" : false,
           "share_url" : "https://www.masters.com/en_US/players/player_68084.html",
+          "image": false
+        },
+
+        {
+          "last_name" : "Kim",
+          "first_name" : "Michael",
+          "id" : "39975",
+
+
+          "countryCode" : "USA",
+
+          "countryName" : "United States",
+          "display_name" : "M. Kim",
+          "name" : "Michael Kim",
+          "sort_name" : "kim",
+          "age" : "31",
+          "height" : "5-11",
+          "weight" : "165",
+          "swing" : "Right",
+          "stats" : false,
+          "past_champion" : false,
+
+          "amateur" : false,
+          "Amateur" : "",
+          "first_masters" : false,
+
+          "international" : false,
+          "masters_wins" : "",
+          "real_player" : true,
+          "dq" : false,
+          "wd" : false,
+          "share_url" : "https://www.masters.com/en_US/players/player_39975.html",
           "image": false
         },
 
@@ -2464,6 +2592,38 @@
           "dq" : false,
           "wd" : false,
           "share_url" : "https://www.masters.com/en_US/players/player_35891.html",
+          "image": false
+        },
+
+        {
+          "last_name" : "Spaun",
+          "first_name" : "J.J.",
+          "id" : "39324",
+
+
+          "countryCode" : "USA",
+
+          "countryName" : "United States",
+          "display_name" : "J.J. Spaun",
+          "name" : "J.J. Spaun",
+          "sort_name" : "spaun",
+          "age" : "34",
+          "height" : "5-9",
+          "weight" : "185",
+          "swing" : "Right",
+          "stats" : false,
+          "past_champion" : false,
+
+          "amateur" : false,
+          "Amateur" : "",
+          "first_masters" : false,
+
+          "international" : false,
+          "masters_wins" : "",
+          "real_player" : true,
+          "dq" : false,
+          "wd" : false,
+          "share_url" : "https://www.masters.com/en_US/players/player_39324.html",
           "image": false
         },
 
