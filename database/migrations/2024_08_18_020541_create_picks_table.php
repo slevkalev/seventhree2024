@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignIdFor(\App\Models\Game::class, 'game')->constrained();
             $table->integer('pick');
             $table->integer('points');
-            $table->unique(['user_id', 'game_id']);
+            $table->unique(['user', 'game']);
             $table->timestamps();
         });
     }
