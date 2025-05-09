@@ -102,8 +102,8 @@ const field = []
 
             // console.log(arrayString)
 
-            import data from './masters.json' with {type: "json"};
-            // console.log(data); // Your JSON array is now available as 'data'
+            import data from './pga2025.json' with {type: "json"};
+            console.log(data); // Your JSON array is now available as 'data'
 
 
 
@@ -125,4 +125,4 @@ const field = []
 
             const jsonString = JSON.stringify(names, null, 2);
 
-            // console.log(jsonString)
+            console.log(jsonString)
