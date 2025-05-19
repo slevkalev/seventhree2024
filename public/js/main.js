@@ -103,7 +103,7 @@ const field = []
             // console.log(arrayString)
 
             import data from './pga2025.json' with {type: "json"};
-            console.log(data); // Your JSON array is now available as 'data'
+            // console.log(data); // Your JSON array is now available as 'data'
 
 
 

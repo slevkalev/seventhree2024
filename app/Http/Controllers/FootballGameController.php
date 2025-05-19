@@ -20,6 +20,8 @@ class FootballGameController extends Controller
 
         $games = Game::all();
 
+        // dd($games);
+
         $userId = Auth::id();
         $today = Carbon::now()->format('m/d/Y');
         $weeks = Helper::schedule();

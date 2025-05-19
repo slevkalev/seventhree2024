@@ -14,8 +14,6 @@
     <hr>
 
 
-
-
         @foreach ($games as $game)
 
             <a href="/dashboard/games/{{ $game['id'] }}" class="gm" data-week="{{$game->week}}">
@@ -58,11 +56,13 @@
 
         const attValue = `${week}`
 
-        elements.forEach(element => {
-                if (element.getAttribute("data-week") !== attValue) {
-                element.classList.add('hide');
-            }
-        });
+        if(!week==null){
+            elements.forEach(element => {
+                    if (element.getAttribute("data-week") !== attValue) {
+                    element.classList.add('hide');
+                }
+            });
+        }
 
 
 
