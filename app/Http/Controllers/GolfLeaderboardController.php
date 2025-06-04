@@ -17,7 +17,7 @@ class GolfLeaderboardController extends Controller
         $today = Carbon::now()->format('m/d/Y');
         $golfers = Golfer::all();
         $entries = Player::all();
-        $tournament = Helper::golfTournaments()[2];
+        $tournament = Helper::golfTournaments()[3];
 
 
 

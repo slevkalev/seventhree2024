@@ -52,6 +52,7 @@
                 <summary class="golf-summary">Payouts</summary>
                 <ul>
                      <li>Payout breakdown is dependent on the number of entries</li>
+                     <li>$1.50 is deducted from payout to cover etransfer cost</li>
                      <li>24 entries or less -- winner take all</li>
                      <li>25-34 entries --  2nd = $50, 1st = the balance</li>
                      <li>35-59 entries -- 2nd = $100, 3rd = $50, 1st = the balance</li>

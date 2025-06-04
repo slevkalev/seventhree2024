@@ -13,7 +13,7 @@ class GolfHomeController extends Controller
     public function index() {
         $today = Carbon::now()->format('m/d/Y H:i:s');
         $tournaments = Helper::golfTournaments();
-        $current = Helper::golfTournaments()[2];
+        $current = Helper::golfTournaments()[3];
 
 
 

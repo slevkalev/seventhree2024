@@ -58,6 +58,7 @@ class GamesByWeekController extends Controller
 
         $picksFull = Pick::all();
 
+
         return view('football.games.show', [
             'week'=> $week,
             'games'=> $games,

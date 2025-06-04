@@ -64,7 +64,7 @@
 
                     @php
 
-                        $dateString =  $game->game_date ; // Input date string
+                        $dateString =  $game->game_date; // Input date string
                         $date = DateTime::createFromFormat('m/d/Y', $dateString); // Create DateTime object
                         $dayString = $date->format('D'); // Format to get the day abbreviation
 

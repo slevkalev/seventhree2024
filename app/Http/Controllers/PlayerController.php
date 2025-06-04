@@ -13,7 +13,7 @@ class PlayerController extends Controller
 {
     public function index() {
         $today = Carbon::now();
-        $tournament = Helper::golfTournaments()[2];
+        $tournament = Helper::golfTournaments()[3];
         $start_date = Carbon::parse($tournament['start']);
         // dd($today->greaterThan($start_date));
 

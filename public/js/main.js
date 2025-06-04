@@ -50,50 +50,75 @@ const activeTournament = golfTournaments.find(tournament=> tournament.active ===
 
 
 
+//####### swap the data  .json file below with current tournament data file name
 
-const field = []
+import data from './usopen2025.json' with {type: "json"};
+    // console.log(data); // Your JSON array is now available as 'data'
 
 
 
-
-            function sortByField(obj, fieldName) {
-                // Ensure obj is an array
-                const array = Array.isArray(obj) ? obj : [obj];
-
-                // Sort the array based on the specified field
-                return array.sort((a, b) => {
-                  if (a[fieldName] < b[fieldName]) return -1;
-                  if (a[fieldName] > b[fieldName]) return 1;
-                  return 0;
-                });
-              }
-
-              function getFieldValues(obj, fieldName) {
-                // Ensure obj is an array
-                const array = Array.isArray(obj) ? obj : [obj];
-
-                // Map over the array and extract the values of the specified field
-                return array.map(item => item[fieldName]);
-              }
+const field = data.players
 
 
 
 
-            const newField = field.map(player=>{
-                return {
-                    alphaSort:player.alphaSort,
-                    firstName: player.firstName,
-                    lastName: player.lastName,
-                    name:player.firstName + " " + player.lastName,
-                    shortName: player.shortName
-                }
-            })
 
-            const newFieldSorted = sortByField(newField, "alphaSort")
+    function sortByField(obj, fieldName) {
+        // Ensure obj is an array
+        const array = Array.isArray(obj) ? obj : [obj];
+
+        // Sort the array based on the specified field
+        return array.sort((a, b) => {
+            if (a[fieldName] < b[fieldName]) return -1;
+            if (a[fieldName] > b[fieldName]) return 1;
+            return 0;
+        });
+    }
+
+        function getFieldValues(obj, fieldName) {
+        // Ensure obj is an array
+        const array = Array.isArray(obj) ? obj : [obj];
+
+        // Map over the array and extract the values of the specified field
+        return array.map(item => item[fieldName]);
+    }
+
+    // function addArraySortProperty(arrayOfObjects) {
+            //     return arrayOfObjects.map(obj => ({
+            //       ...obj,
+            //       arraySort: obj.last_name ? obj.last_name[0].toUpperCase() : ''
+            //     }));
+            // }
+
+        function addArraySortProperty(arrayOfObjects) {
+            return arrayOfObjects.map(obj => ({
+                ...obj,
+                arraySort: 1,
+                // arraySort: obj.lastName ? obj.lastName[0].toUpperCase() : ''
+            }));
+        }
 
 
-            const playerList = getFieldValues(newFieldSorted, "name")
 
+
+    const newField = field.map(player=>{
+        return {
+            alphaSort: player.lastName[0],
+            firstName: player.firstName,
+            lastName: player.lastName,
+            name:player.firstName + " " + player.lastName,
+            shortName: player.shortName
+        }
+    })
+
+
+
+    const newFieldSorted = sortByField(newField, "alphaSort")
+
+
+    const playerList = getFieldValues(newFieldSorted, "name")
+
+    // console.log(newField)
 
 
             // console.log(playerList)
@@ -102,26 +127,21 @@ const field = []
 
             // console.log(arrayString)
 
-            import data from './pga2025.json' with {type: "json"};
-            // console.log(data); // Your JSON array is now available as 'data'
 
 
 
 
 
-            function addArraySortProperty(arrayOfObjects) {
-                return arrayOfObjects.map(obj => ({
-                  ...obj,
-                  arraySort: obj.last_name ? obj.last_name[0].toUpperCase() : ''
-                }));
-            }
-
-            const mastersPlayers=addArraySortProperty(data.players)
 
 
-            const names = data.players.map(person => `${person.first_name} ${person.last_name}`);
 
 
+
+
+            // const names = data.players.map(person => `${person.first_name} ${person.last_name}`);
+            const names = newFieldSorted.map(person => `${person.firstName} ${person.lastName}`);
+
+            // console.log(names.length)
 
             const jsonString = JSON.stringify(names, null, 2);
 
