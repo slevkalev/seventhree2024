@@ -141,7 +141,7 @@ const field = data.players
             // const names = data.players.map(person => `${person.first_name} ${person.last_name}`);
             const names = newFieldSorted.map(person => `${person.firstName} ${person.lastName}`);
 
-            // console.log(names.length)
+            console.log(names.length)
 
             const jsonString = JSON.stringify(names, null, 2);
 
