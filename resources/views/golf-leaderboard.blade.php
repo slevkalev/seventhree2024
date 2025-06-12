@@ -84,11 +84,18 @@
                         $golfer = $golfers->firstWhere('golfer_name', $entry->$selection);
                         $score = $golfer && $golfer->golfer_status != 999 ? ($golfer->r1 + $golfer->r2 + $golfer->r3 + $golfer->r4) : 'Cut';
                     @endphp
+
+                  @if ($golfer)
                     <div class="selected">
                         <span class="selected-name">{{ $entry->$selection }}</span>
                         <span class="selected-score">{{ $golfer->golfer_status==0? formatScore($score) : 'Cut' }}</span>
                         <span class="selected-thru">{{ formatThru($golfer->round_status) }}</span>
                     </div>
+
+                  @else
+                      <span>{{$entry->selection}}</span>
+                  @endif
+
                 @endfor
             </div>
         </details>
