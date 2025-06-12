@@ -126,7 +126,7 @@ console.log(field.players)
 
             const arrayString = playerList.toString()
 
-            // console.log(arrayString)
+            console.log(arrayString)
 
 
 
@@ -140,4 +140,7 @@ console.log(field.players)
 
             const jsonString = JSON.stringify(names, null, 2);
 
-            console.log(jsonString)
+            // console.log(jsonString)
+
+
+            // Ludvig Åberg, Byeong Hun An, Sam Bairstow, Jose Luis Ballester Barrio, Philip Barbaree, Zach Bauchou, Evan Beck, Daniel Berger, Christiaan Bezuidenhout, Akshay Bhatia, Zac Blair, Chandler Blanchet, Richard Bland, Keegan Bradley, Jacob Bridgeman, Jackson Buchanan, Sam Burns, Brady Calkins, Brian Campbell, Laurie Canter, Patrick Cantlay, Bud Cauley, Will Chandler, Wyndham Clark, Trevor Cone, Corey Conners, Cam Davis, Jason Day, Bryson DeChambeau, Thomas Detry, Roberto Díaz, Alistair Docherty, George Duangmanee, Nick Dunlap, Nico Echavarria, Harris English, Tony Finau, Matt Fitzpatrick, Tommy Fleetwood, Ryan Gerard, Lucas Glover, Emilio Gonzalez, Chris Gotterup, Max Greyserman, Ben Griffin, Lanto Griffin, Emiliano Grillo, Trevor Gutschewski, Grant Haefner, James Hahn, Brian Harman, Frankie Harris, Justin Hastings, Tyrrell Hatton, Russell Henley, Joey Herrera, Justin Hicks, Joe Highsmith, Tom Hoge, Rasmus Højgaard, Viktor Hovland, Mason Howell, Mark Hubbard, Mackenzie Hughes, Sungjae Im, Stephan Jaeger, Ben James, Dustin Johnson, Matthew Jordan, Johnny Keefer, Noah Kent, Michael Kim, Si Woo Kim, Tom Kim, Chris Kirk, George Kneiser, Brooks Koepka, Jackson Koivun, Jinichiro Kozuma, Jacques Kruyswijk, Michael La Sasso, Frederic LaCroix, Joakim Lagergren, Thriston Lawrence, Bryan Lee, Min Woo Lee, Marc Leishman, Riley Lewis, Justin Lower, Shane Lowry, Robert MacIntyre, Hideki Matsuyama, Denny McCarthy, Matt McCarty, Ryan McCormick, Rory McIlroy, Maverick McNealy, Phil Mickelson, Guido Migliozzi, Maxwell Moldovan, Edoardo Molinari, Collin Morikawa, Rasmus Neergaard-Petersen, James Nicholas, Joaquin Niemann, Niklas Norgaard, Andrew Novak, Thorbjørn Olesen, Alvaro Ortiz, Carlos Ortiz, Harrison Ott, Andrea Pavan, Matthieu Pavon, Taylor Pendrith, Victor Perez, Trent Phillips, Zachery Pollo, J.T. Poston, Jon Rahm, Aaron Rai, Patrick Reed, Davis Riley, Justin Rose, Xander Schauffele, Scottie Scheffler, Adam Schenk, Adam Scott, Lance Simpson, Cameron Smith, Jordan Smith, J.J. Spaun, Jordan Spieth, Sam Stevens, Sepp Straka, Yuta Sugiura, Preston Summerhays, Cameron Tankersley, Nick Taylor, Justin Thomas, Davis Thompson, Austen Truslow, Jhonattan Vegas, Kevin Velo, Scott Vincent, Matt Vogt, Matt Wallace, Tyler Weaver, Gary Woodland, Cameron Young, Erik van Rooyen

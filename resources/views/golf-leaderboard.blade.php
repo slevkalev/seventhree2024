@@ -55,6 +55,7 @@
         })->sortBy(function ($entry) {
             return $entry->total_score['value'];
         });
+
         function formatScore($score){
             if($score > 0) return "+".$score;
             if($score == 0) return "E";
