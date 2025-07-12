@@ -11,6 +11,7 @@
         $end_date = \Carbon\Carbon::createFromFormat('m/d/Y', $tournament['end'])->format('F d ');
     @endphp
 
+    <section>
     <h1>{{$tournament['tournament_name']}}</h1>
     <div>{{ $start_date }} to {{ $end_date }}</div>
     <br>
@@ -76,6 +77,7 @@
         @endforeach
 
     </div>
+    </section>
 
     <script>
         function sortGolfersByScore() {

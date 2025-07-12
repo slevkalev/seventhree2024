@@ -16,7 +16,7 @@ class GolfTournamentInfoController extends Controller
         $today = Carbon::now()->format('m/d/Y');
         $golfers = Golfer::all();
         $entries = Player::all();
-        $tournament = Helper::golfTournaments()[3];
+        $tournament = Helper::golfTournaments()[4];
 
 
 

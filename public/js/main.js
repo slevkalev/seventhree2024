@@ -52,7 +52,7 @@ const activeTournament = golfTournaments.find(tournament=> tournament.active ===
 
 //####### swap the data  .json file below with current tournament data file name
 
-import data from './usopen2025old.json' with {type: "json"};
+import data from './theopen2025.json' with {type: "json"};
     // console.log(data); // Your JSON array is now available as 'data'
 
 const field = data.data.field

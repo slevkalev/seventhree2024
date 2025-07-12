@@ -14,7 +14,7 @@
 
 
 
-
+<section>
     <h1>{{$tournament['tournament_name']}}</h1>
     <div>{{ $start_date }} to {{ $end_date }}</div>
     <br>
@@ -101,7 +101,7 @@
         </details>
     @endforeach
 
-
+</section>
     <script>
 
     </script>

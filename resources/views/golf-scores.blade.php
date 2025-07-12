@@ -22,17 +22,19 @@
 
     @endphp
 
-    <h1>Golfer Scores Admin</h1>
+<h1>Golfer Scores Admin</h1>
+<section>
 
 
-        <div>Golfers selected: {{$number_of}}</div>
-        <div>Golfers active: {{$number_active}}</div>
-        <div>Golfers made the cut: {{$made_the_cut }}</div>
+    <div>Golfers selected: {{$number_of}}</div>
+    <div>Golfers active: {{$number_active}}</div>
+    <div>Golfers made the cut: {{$made_the_cut }}</div>
 
     <div>
         <h3>Acitve golfers</h3>
 
         <div class="active-golfer-list">
+</section>
 
             @foreach ($weekend_golfers as $golfer )
 
@@ -94,7 +96,10 @@
 
     @endforeach
 
+
     </div>
+
+
 
     <script>
 

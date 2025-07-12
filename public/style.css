@@ -126,7 +126,7 @@ button{
 } */
 
 section {
-    max-width: 20em;
+    /* max-width: 20em; */
     margin: 2em auto;
     padding: 1em;
     background-color: #f9f9f9;
