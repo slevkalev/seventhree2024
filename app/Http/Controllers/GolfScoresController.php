@@ -16,6 +16,7 @@ class GolfScoresController extends Controller
     public function index(){
 
         $golfers = Golfer::all();
+        $count= Player::count();
 
         $active_golfers = Golfer::where('active', 1)->get();
         // dd($golfers);
@@ -52,7 +53,8 @@ class GolfScoresController extends Controller
             "number_of"=>$uniqueSelections->count(),
             "number_active"=>$active_golfers->count(),
             "made_the_cut"=>$made_the_cut->count(),
-            "weekend_golfers"=>$made_the_cut
+            "weekend_golfers"=>$made_the_cut,
+            "count"=>$count
         ]);
     }
 

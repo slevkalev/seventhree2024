@@ -22,86 +22,122 @@
 
     @endphp
 
-<h1>Golfer Scores Admin</h1>
-<section>
+    <h1>Golfer Scores Admin</h1>
 
-
-    <div>Golfers selected: {{$number_of}}</div>
-    <div>Golfers active: {{$number_active}}</div>
-    <div>Golfers made the cut: {{$made_the_cut }}</div>
 
     <div>
-        <h3>Acitve golfers</h3>
+        <button class="search-btn">Search</button>
+        <button class="all-active-btn">All Active</button>
+    </div>
 
-        <div class="active-golfer-list">
-</section>
 
-            @foreach ($weekend_golfers as $golfer )
+    <section class="search-section">
+    <h3>Search All Golfers</h3>
 
-            <a href="golf-scores/{{ $golfer->id}}/edit" class="active-golfer-link">
-                <div class="active-golfer-info">
-                    <div class="active-golfer-info_primary">
-                        <span class="active-golfer-name">{{ $golfer->golfer_name }}</span>
+
+        <input class="golfer-search" type="text" placeholder="Search">
+
+
+
+        <div class="golfer-list">
+
+        @foreach ($golfers as $golfer )
+
+            @php
+                $cutWeight= $golfer->golfer_status == 0? 0:100;
+
+                $score = $golfer->r1 + $golfer->r2 + $golfer->r3 + $golfer->r4 + $cutWeight
+            @endphp
+
+            <a href="golf-scores/{{ $golfer->id}}/edit" class="golfer-link">
+                <div class="golfer-info" style= "color: {{$golfer->active == 1? 'limegreen': 'black' }}">
+                    <div class="golfer-info_primary">
+                        <span class="golfer-name">{{ $golfer->golfer_name }}</span>
                         <div>
-                            <span class="active-golfer-score">{{ formatScore($golfer->total_score) }}</span>
-                            <span class="active-golfer-thru">{{ formatThru($golfer->round_status, $golfer->active) }}</span>
+                            <span class="golfer-score">{{$golfer->golfer_status == 0 ? formatScore($score) : "Cut" }}</span>
+                            <span>{{ formatThru($golfer->round_status==null? 0: $golfer->round_status, $golfer->active) }}</span>
                         </div>
+                    </div>
+                    <div class="golfer-info_secondary">
+                        <span>R1: {{ formatScore($golfer->r1) }}</span>
+                        <span>R2: {{ formatScore($golfer->r2) }}</span>
+                        <span>R3: {{ formatScore($golfer->r3) }}</span>
+                        <span>R4: {{ formatScore($golfer->r4) }}</span>
+                    </div>
+                    <div class="golfer-info_third">
+                        <span>Active: {{ $golfer->active == 1? "yes" : "no" }}</span>
+                        <span>Status: {{ $golfer->golfer_status==0? "Made":"Cut" }}</span>
                     </div>
                 </div>
             </a>
 
-            @endforeach
-        </div>
+        @endforeach
+
+
     </div>
+    </section>
 
 
-    <h3>Search All Golfers</h3>
-
-
-            <input class="golfer-search" type="text" placeholder="Search">
+    <section class="golfer-section">
 
 
 
-    <div class="golfer-list">
 
-    @foreach ($golfers as $golfer )
+        <div>
+        <h3>Acitve golfers</h3>
 
-        @php
-            $cutWeight= $golfer->golfer_status == 0? 0:100;
 
-            $score = $golfer->r1 + $golfer->r2 + $golfer->r3 + $golfer->r4 + $cutWeight
-        @endphp
+        <div>Entries: {{$count}}</div>
+        <div>Golfers selected: {{$number_of}}</div>
+        <div>Golfers active: {{$number_active}}</div>
+        <div>Golfers made the cut: {{$made_the_cut }}</div>
 
-        <a href="golf-scores/{{ $golfer->id}}/edit" class="golfer-link">
-            <div class="golfer-info" style= "color: {{$golfer->active == 1? 'limegreen': 'black' }}">
-                <div class="golfer-info_primary">
-                    <span class="golfer-name">{{ $golfer->golfer_name }}</span>
-                    <div>
-                        <span class="golfer-score">{{$golfer->golfer_status == 0 ? formatScore($score) : "Cut" }}</span>
-                        <span>{{ formatThru($golfer->round_status==null? 0: $golfer->round_status, $golfer->active) }}</span>
+
+            <div class="active-golfer-list">
+
+
+
+                @foreach ($weekend_golfers as $golfer )
+
+                <a href="golf-scores/{{ $golfer->id}}/edit" class="active-golfer-link">
+                    <div class="active-golfer-info">
+                        <div class="active-golfer-info_primary">
+                            <span class="active-golfer-name">{{ $golfer->golfer_name }}</span>
+                            <div>
+                                <span class="active-golfer-score">{{ formatScore($golfer->total_score) }}</span>
+                                <span class="active-golfer-thru">{{ formatThru($golfer->round_status, $golfer->active) }}</span>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="golfer-info_secondary">
-                    <span>R1: {{ formatScore($golfer->r1) }}</span>
-                    <span>R2: {{ formatScore($golfer->r2) }}</span>
-                    <span>R3: {{ formatScore($golfer->r3) }}</span>
-                    <span>R4: {{ formatScore($golfer->r4) }}</span>
-                </div>
-                <div class="golfer-info_third">
-                    <span>Active: {{ $golfer->active == 1? "yes" : "no" }}</span>
-                    <span>Status: {{ $golfer->golfer_status==0? "Made":"Cut" }}</span>
-                </div>
+                </a>
+
+                @endforeach
             </div>
-        </a>
-
-    @endforeach
-
-
-    </div>
-
+        </div>
+    </section>
 
 
     <script>
+        const golferSection = document.querySelector(".golfer-section")
+        const searchSection = document.querySelector(".search-section")
+        const searchBtn = document.querySelector(".search-btn")
+        const golferBtn = document.querySelector(".all-active-btn")
+
+        searchSection.style.display="none"
+
+        golferBtn.addEventListener("click", function(){
+            searchSection.style.display='none';
+            golferSection.style.display="block";
+        })
+
+         searchBtn.addEventListener("click", function(){
+            searchSection.style.display="block";
+            golferSection.style.display="none";
+        })
+
+
+
+
 
                 // Select all golfer links
         const golferLinks = document.querySelectorAll('.golfer-link');
