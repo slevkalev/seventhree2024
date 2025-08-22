@@ -25,7 +25,7 @@ class GamesByWeekController extends Controller
 
         $today = Carbon::now()->format('m/d/Y');
         $weeks = Helper::schedule();
-        $weekId = Helper::get_week_id($today, $weeks);
+        $weekId = Helper::get_week_id($today, $weeks)?? 1;
 
         return $this->show($weekId);
 

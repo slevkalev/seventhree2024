@@ -28,6 +28,14 @@
         <a href="/dashboard/games">Games</a>
     </p>
 
+    <script>
+        const currentUser = @json($currentUser)
 
+        const header = document.querySelector('.header')
+
+        header.insertAdjacentHTML('afterend', `<div class="logged-user">${currentUser.first_name?? ""} ${currentUser.last_name?? ""}</div>`)
+
+
+    </script>
 
 </x-layout_dash>

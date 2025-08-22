@@ -23,6 +23,7 @@ class FootballGameController extends Controller
         // dd($games);
 
         $userId = Auth::id();
+        $currentUser = Auth::user() ?? "";
         $today = Carbon::now()->format('m/d/Y');
         $weeks = Helper::schedule();
         $weekId = Helper::get_week_id($today, $weeks);
@@ -34,7 +35,8 @@ class FootballGameController extends Controller
         return view('football.dashboard.games.index', [
             'games' => $games,
             'email' => $email,
-            'week' => $weekId
+            'week' => $weekId,
+            'currentUser'=>$currentUser,
         ]);
 
     }
@@ -45,9 +47,9 @@ class FootballGameController extends Controller
 
     public function show(Game $game) {
 
+        $currentUser = Auth::user() ?? "";
 
-
-        return view('football.dashboard.games.show', ['game' => $game]);
+        return view('football.dashboard.games.show', ['game' => $game, 'currentUser'=>$currentUser, ]);
 
     }
 
@@ -81,7 +83,9 @@ class FootballGameController extends Controller
 
     public function edit(Game $game) {
 
-        return view('football.dashboard.games.edit', [ 'game'=>$game ]);
+        $currentUser = Auth::user() ?? "";
+
+        return view('football.dashboard.games.edit', [ 'game'=>$game,  'currentUser'=>$currentUser, ]);
 
     }
 

@@ -3,6 +3,8 @@
         Make Pick
     </x-slot:heading>
 
+<section>
+
     <h1 class="center pad1">Pick for Game {{ $game->id }}</h1>
 
     <form class="border1" id="pick-form" method="POST" action="/user-picks">
@@ -43,6 +45,8 @@
     <div class="bottom-div">
         <a href="/games" class="cancel-button">Cancel</a>
     </div>
+
+</section>
 
     <script>
         const homeTeamCheckbox = document.getElementById('home_team');
