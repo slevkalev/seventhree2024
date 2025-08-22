@@ -5,70 +5,93 @@
 
     <h1>Register</h1>
 
-<form method="POST" action="/register">
+<form method="POST" action="/register" class="register-form">
     @csrf
-  <div class="">
-    <div class="">
+  <div>
 
-      <div class="">
         <x-form-field>
             <x-form-label for="title">First Name</x-form-label>
             <div class="input-div">
-                <x-form-input name="first_name" id="title" required />
-
-                <x-form-error name="first_name" />
+                <x-form-input name="first_name" id="title" :value="old('first_name')" required />
 
             </div>
+            <x-form-error name="first_name" />
         </x-form-field>
 
         <x-form-field>
             <x-form-label for="last_name">Last Name</x-form-label>
             <div class="input-div">
-                <x-form-input name="last_name" id="last_name" required />
-
-                <x-form-error name="last_name" />
+                <x-form-input name="last_name" id="last_name" :value="old('last_name')" required />
 
             </div>
+            <x-form-error name="last_name" />
+        </x-form-field>
+
+        <x-form-field>
+            <x-form-label for="phone">Phone</x-form-label>
+            <div class="input-div">
+                <x-form-input name="phone" id="phone" :value="old('phone')" required />
+
+            </div>
+            <x-form-error name="phone" />
         </x-form-field>
 
         <x-form-field>
             <x-form-label for="email">E-mail</x-form-label>
             <div class="input-div">
-                <x-form-input name="email" x id="email" type="email" required />
+                <x-form-input name="email" x id="email" type="email" :value="old('email')" required />
 
-                <x-form-error name="email" />
             </div>
+            <x-form-error name="email" />
         </x-form-field>
 
         <x-form-field>
             <x-form-label for="password">Password</x-form-label>
             <div class="input-div">
-                <x-form-input name="password" id="password" type="password" required />
+                <div class="field-input">
 
+                <input class="register-input wd80" type="password" id="password" name="password" required>
+
+                <button type="button" class="show-btn">show</button>
+                    </div>
+
+                </div>
                 <x-form-error name="password" />
-            </div>
         </x-form-field>
 
         <x-form-field>
-            <x-form-label for="password_confirmation">Confirm Pasword</x-form-label>
+            <x-form-label for="password_confirmation">Confirm Password</x-form-label>
             <div class="input-div">
-                <x-form-input name="password_confirmation" id="password_confirmation" type="password" required />
+                <x-form-input name="password_confirmation" id="password_confirmation" type="text" required />
 
-                <x-form-error name="password_confirmation" />
             </div>
+            <x-form-error name="password_confirmation" />
         </x-form-field>
 
-      </div>
 
-    </div>
-  </div>
 
-  <div class="button-div">
-    <a href="/" class="">Cancel</a>
-    <x-form-button>Register</x-form-button>
+
+          <div class="button-div">
+            <a href="/" class="">Cancel</a>
+            <x-form-button>Submit</x-form-button>
+          </div>
   </div>
 </form>
 
 
+<script>
+  const passwordInput = document.getElementById('password');
+  const toggleBtn = document.querySelector('.show-btn');
+
+  toggleBtn.addEventListener('click', () => {
+    if (passwordInput.type === 'password') {
+      passwordInput.type = 'text';
+      toggleBtn.textContent = 'Hide';
+    } else {
+      passwordInput.type = 'password';
+      toggleBtn.textContent = 'Show';
+    }
+  });
+</script>
 </x-layout>
 

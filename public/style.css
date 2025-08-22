@@ -1,5 +1,17 @@
 /* General styles */
 
+*, *:before, *:after{
+    box-sizing: border-box;
+    padding: 0;
+    margin:0;
+}
+
+html{
+    background-color: #ccc;
+    font-size: 16px;
+    font-family: "Roboto", sans-serif;
+}
+
 body {
     font-family: 'Kanit', sans-serif;
     margin: 0;
@@ -9,7 +21,6 @@ body {
     line-height: 1.6;
 }
 
-
 .header {
     display: flex;
     justify-content: space-between;
@@ -17,6 +28,14 @@ body {
     padding: .6125em 1.25em;
     background-color: #333;
     color: white;
+}
+
+.rules-list{
+    text-align: left;
+    padding: 1em;
+    line-height: 1.8rem;
+    max-width: 60ch;
+
 }
 
 .logo {
@@ -30,6 +49,13 @@ body {
 .login-div {
     display: flex;
     gap: 1.3125em;
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 0 1rem;
+}
+
+.login-div:hover{
+    background-color:rgba(244, 240, 240, 0.3);
 }
 
 .loss{
@@ -76,20 +102,56 @@ body {
 
 
 /* login and register styles */
+.register-form{
+    height:75vh;
+    width:80%;
+}
 
 .register-input{
     padding: .5em 1em;
     margin-bottom: 1em;
 }
 
+.wd80{
+    width:65%;
+}
+
+.field-div{
+    display:flex;
+    flex-direction: column;
+}
+
+.input-div{
+    display: flex;
+}
+.field-input{
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.field-error{
+    color:red;
+}
+
+.show-btn{
+    padding: .7em .5em;
+    font-size: .7rem;
+}
+
 button{
-    margin-bottom: 1em;
+    /* margin-bottom: 1em; */
+    padding: .5em;
 }
 
 .button-div{
+    max-width: 200px;
+    margin-top: 2em;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
@@ -166,11 +228,20 @@ h3 {
     font-size: .7rem;
 }
 
+
+.logout-btn{
+    all: unset;
+    color:white;
+    background-color: transparent;
+    outline: none;
+
+}
+
 .logged-user{
     background-color: #bbb;
     color: white;
     text-align: right;
-    padding-right: 2em;
+    padding-right: 2em
 }
 
 .week-nav{
@@ -189,6 +260,26 @@ h3 {
 }
 .week-nav a{
     min-width: 2ch;
+}
+
+.register-btn{
+    border: none;
+    text-shadow: 1px 1px 3px #333;
+    background-color: hsla(39, 100%, 50%, 1);
+    color: white;
+    border-radius: 1rem;
+    padding: .5rem 1rem;
+    box-shadow: 1px 1px 3px #333;
+}
+
+.register-btn:hover{
+    background-color: hsla(39, 100%, 50%, .7);
+    text-shadow: 1px 1px 0px #222;
+
+}
+
+.register-btn:click{
+    box-shadow: 0px 0px 0px white ;
 }
 
 /* Responsive styles */
@@ -365,7 +456,7 @@ h3 {
 
 #pick-form{
     padding: 1em;
-    width: 31.25em;
+
 }
 
 #pick-form p{
@@ -449,7 +540,7 @@ h3 {
 }
 
 .bottom-div{
-    width: 31.25em;
+
     display: flex;
     justify-content: center;
     gap: 1em;
@@ -460,14 +551,13 @@ h3 {
     color: white;
     font-family: 'Kanit', sans-serif;
     border-radius: .625em;
-    font-size: medium;
+    font-size: 1rem;
 
 }
 
 .cancel-button{
     background-color: #000073;
     border: 1px solid #000073;
-    height: 24px;
     text-decoration: none;
 }
 

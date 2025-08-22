@@ -14,12 +14,12 @@ class HomeController extends Controller
         $today = Carbon::now()->format('m/d/Y');
         $currentUser = Auth::user() ?? "";
 
-        return redirect('golf');
+        // return redirect('golf');
 
-        // return view('home', [
-        //     'today'=>$today,
-        //     'currentUser'=>$currentUser
-        // ]);
+        return view('home', [
+            'today'=>$today,
+            'currentUser'=>$currentUser
+        ]);
 
     }
 }
