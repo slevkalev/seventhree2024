@@ -5,6 +5,9 @@
 
     <x-nav-block></x-nav-block>
 
+    <section>
+
+
     <h2>All Games</h2>
 {{--
     <div>
@@ -18,9 +21,9 @@
 
             <a href="/dashboard/games/{{ $game['id'] }}" class="gm" data-week="{{$game->week}}">
 
-
+                <div class="game-card">
                     <span>Game: {{ $game->id }}</span>
-                    <div>
+                    <div class="game-card-week">
                         <span>Week {{ $game->week }}</span>
                         <span>{{ $game->game_date }}</span>
                         <span>{{ $game->game_time }}</span>
@@ -36,7 +39,7 @@
                     </div>
                     <div>{{$game->locked == 1? "locked" : "open"}}</div>
                     <div>{{$game->game_status == 6? "Final" : "pending"}}</div>
-
+                </div>
             </a>
 
 
@@ -48,6 +51,8 @@
     {{-- <div>
         <a href="/dashboard/games/create">Create Game</a>
     </div> --}}
+
+    </section>
 
     <script>
         const elements = document.querySelectorAll('.gm')

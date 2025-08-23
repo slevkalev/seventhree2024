@@ -592,7 +592,7 @@ h3 {
     position: relative;
     margin-left: auto;
     margin-right: auto;
-
+    justify-content: center;
 }
 
 
@@ -659,6 +659,20 @@ h3 {
     flex-direction: column;
     margin-bottom: 1em;
 }
+
+
+.game-card{
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 1em;
+}
+
+.game-card-week{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
 
 
 /* dashboard edit game styles */
