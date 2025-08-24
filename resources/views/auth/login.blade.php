@@ -29,7 +29,7 @@
 
 
         <x-form-button>Submit</x-form-button>
-        <div>
+        <div class="m-ba">
             {{-- <a href="#" class="link">Forgot Password</a> --}}
             <a href="/register" class="link">Create Account</a>
         </div>
