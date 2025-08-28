@@ -222,6 +222,8 @@ h3 {
     margin: 2em 0;
 }
 
+
+
 .flex-c{
     display: flex;
     flex-direction: column;
@@ -590,7 +592,9 @@ h3 {
     width: 100%;
     max-width: 121.25em;
     position: relative;
-    margin-left: 1em;
+    /* margin-left: 1em; */
+    justify-content: center;
+    align-items: center;
 }
 
 
