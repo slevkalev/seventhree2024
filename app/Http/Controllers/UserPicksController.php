@@ -133,6 +133,20 @@ class UserPicksController extends Controller
             'points'=>['required']
         ]);
 
+
+        // Check for an existing record with this user and game
+        $exists = Pick::where('user', request('user'))
+                    ->where('game', request('game'))
+                    ->exists();
+
+        if ($exists) {
+            // Redirect back with an error message, or handle as you prefer
+            return redirect('/games');
+
+        }
+
+        // Create the pick if no duplicate found
+
         Pick::create([
             'user'=>request('user'),
             'game'=>request('game'),
@@ -140,7 +154,7 @@ class UserPicksController extends Controller
             'points'=>request('points'),
         ]);
 
-        return redirect('/user-picks');
+        return redirect('/games');
     }
 
 
@@ -207,7 +221,9 @@ class UserPicksController extends Controller
 
 
 
-        return redirect('/user-picks/'.$week);
+
+        return redirect('/games');
+
     }
 
 

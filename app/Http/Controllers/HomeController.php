@@ -11,6 +11,14 @@ class HomeController extends Controller
 {
     public function home() {
 
+
+
+        if (Auth::check()) {
+            // Redirect authenticated users to the 'games' route
+            return redirect('games');
+        }
+
+
         $today = Carbon::now()->format('m/d/Y');
         $currentUser = Auth::user() ?? "";
 
