@@ -9,12 +9,35 @@
 
 
     <h2>All Games</h2>
+
+    <h3 class="current-wk"></h3>
 {{--
     <div>
         <a href="/dashboard/games/create">Create Game</a>
     </div> --}}
     <br>
-    <hr>
+    <div class="wk-btns">
+        <button class="wk-btn">1</button>
+        <button class="wk-btn">2</button>
+        <button class="wk-btn">3</button>
+        <button class="wk-btn">4</button>
+        <button class="wk-btn">5</button>
+        <button class="wk-btn">6</button>
+        <button class="wk-btn">7</button>
+        <button class="wk-btn">8</button>
+        <button class="wk-btn">9</button>
+        <button class="wk-btn">10</button>
+        <button class="wk-btn">11</button>
+        <button class="wk-btn">12</button>
+        <button class="wk-btn">13</button>
+        <button class="wk-btn">14</button>
+        <button class="wk-btn">15</button>
+        <button class="wk-btn">16</button>
+        <button class="wk-btn">17</button>
+        <button class="wk-btn">18</button>
+    </div>
+    <br>
+
 
 
         @foreach ($games as $game)
@@ -55,19 +78,35 @@
     </section>
 
     <script>
-        const elements = document.querySelectorAll('.gm')
+        const games = document.querySelectorAll('.gm')
+        const currentWk = document.querySelector('.current-wk')
         const week = @json($week)
-
 
         const attValue = `${week}`
 
-        if(!week==null){
-            elements.forEach(element => {
-                    if (element.getAttribute("data-week") !== attValue) {
-                    element.classList.add('hide');
-                }
-            });
-        }
+        currentWk.innerText = `Week ${week}`
+
+        games.forEach(element=>{
+            if(element.getAttribute("data-week") !== attValue){
+                element.style.display='none'
+            }
+        })
+
+        const btns = document.querySelectorAll('.wk-btn')
+            btns.forEach(btn =>{
+                btn.addEventListener('click', ()=>{
+                   let week = btn.textContent.trim()
+                   let elements = document.querySelectorAll('.gm')
+                   document.querySelector(".current-wk").innerText=`Week ${week}`
+                   elements.forEach(element=>{
+                     element.style.display='none'
+                   })
+                   let matching = document.querySelectorAll('[data-week="'+ week +'"]')
+                   matching.forEach(match=>{
+                    match.style.display=""
+                   })
+                })
+            })
 
 
 

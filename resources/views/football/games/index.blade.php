@@ -6,8 +6,6 @@
 
     <x-nav-week></x-nav-week>
 
-
-
     <h2>Games for Week {{ $week }}</h2>
     <section id="games">
     @foreach ($games as $game)
@@ -22,6 +20,7 @@
             @endif
         </a>
     @endforeach
+
     </section>
 
     <script>
