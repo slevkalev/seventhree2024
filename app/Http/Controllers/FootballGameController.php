@@ -114,7 +114,9 @@ class FootballGameController extends Controller
             'locked'=>request('locked')
         ]);
 
-        return redirect('/dashboard/games/' . $game->id);
+        // return redirect('/dashboard/games/' . $game->id);
+        return redirect()->to(route('dashboard.games.index') . '#section' . $game->id);
+
     }
 
     public function destroy(Game $game) {

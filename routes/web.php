@@ -77,7 +77,7 @@ Route::delete('/dashboard/teams/{team}', [FootballTeamController::class, 'destro
 
 
 //games dashboard - create, edit, update, delete a game
-Route::get('/dashboard/games', [FootballGameController::class, 'index']);
+Route::get('/dashboard/games', [FootballGameController::class, 'index'])->name('dashboard.games.index');
 Route::get('/dashboard/games/create', [FootballGameController::class, 'create']);
 Route::post('dashboard/games', [FootballGameController::class, 'store']);
 Route::get('/dashboard/games/{game}', [FootballGameController::class, 'show']);

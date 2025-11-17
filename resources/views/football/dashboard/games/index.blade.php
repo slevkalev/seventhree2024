@@ -44,24 +44,31 @@
 
             <a href="/dashboard/games/{{ $game['id'] }}" class="gm" data-week="{{$game->week}}">
 
-                <div class="game-card">
-                    <span>Game: {{ $game->id }}</span>
+                <div id="section{{ $game->id }}" class="game-card">
+
                     <div class="game-card-week">
-                        <span>Week {{ $game->week }}</span>
+                        <span class="game-id">{{ $game->id }}</span>
+                        <span>Wk {{ $game->week }}</span>
                         <span>{{ $game->game_date }}</span>
                         <span>{{ $game->game_time }}</span>
+                    </div>
+                    <div class="game-card-game">
+                        <div class="game-card-team">
+                            {{-- <span>{{ $game->awayTeam()->pluck('city')->first() }}</span> --}}
+                            <span> {{ $game->awayTeam()->pluck('short_name')->first() }}</span>
+                            <span>{{ $game->away_pts }}</span>
+                        </div>
 
+                        <div class="game-card-team">
+                            {{-- <span>{{ $game->homeTeam()->pluck('city')->first() }}</span> --}}
+                            <span> {{ $game->homeTeam()->pluck('short_name')->first() }}</span>
+                            <span>{{ $game->home_pts }}</span>
+                        </div>
+                        <div class="game-card-game">
+                            <span>{{$game->game_status == 6? "Final" : "pending"}}</span>
+                            <span>{{$game->locked == 1? "locked" : "open"}}</span>
+                        </div>
                     </div>
-                    <div>
-                        <span>{{ $game->awayTeam()->pluck('city')->first() }} {{ $game->awayTeam()->pluck('name')->first() }}</span>
-                        <span>{{ $game->away_pts }}</span>
-                            at
-                        <span>{{ $game->homeTeam()->pluck('city')->first() }}</span>
-                        <span> {{ $game->homeTeam()->pluck('name')->first() }}</span>
-                        <span>{{ $game->home_pts }}</span>
-                    </div>
-                    <div>{{$game->locked == 1? "locked" : "open"}}</div>
-                    <div>{{$game->game_status == 6? "Final" : "pending"}}</div>
                 </div>
             </a>
 

@@ -19,13 +19,13 @@
     </div>
 
     {{-- @can('edit-game', $game) --}}
-    <p class="">
-        <a href="/dashboard/games/{{ $game->id }}/edit">Edit Game</a>
+    <p class= "mt1rem">
+        <a class="games-edit-btn" href="/dashboard/games/{{ $game->id }}/edit">Edit Game</a>
     </p>
     {{-- @endcan --}}
 
-    <p class="">
-        <a href="/dashboard/games">Games</a>
+    <p class="mt1rem">
+        <a class="games-page-btn" href="/dashboard/games">Games</a>
     </p>
 
     <script>
