@@ -18,6 +18,7 @@ use App\Http\Controllers\GolfLeaderboardController;
 use App\Http\Controllers\GolfEntryConfirmed;
 use App\Http\Controllers\GolfTournamentInfoController;
 use App\Http\Controllers\GolfScoresController;
+use App\Http\Controllers\SubscriberController;
 
 
 Route::get('/', [HomeController::class, 'home']);
@@ -122,3 +123,5 @@ Route::get('/golf', [GolfHomeController::class, 'index']);
 Route::get('/golf-leaderboard',[GolfLeaderboardController::class, 'index']);
 
 Route::get('/golf-tournament',[GolfTournamentInfoController::class, 'index']);
+
+
