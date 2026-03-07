@@ -5,3 +5,12 @@ document.addEventListener('DOMContentLoaded', function() {
         loginDiv.style.display="none"
     }
 })
+
+
+import data from './field.json' with {type: "json"};
+
+console.log(data)
+
+const jsonString = JSON.stringify(data, null, 2);
+
+console.log(jsonString)
