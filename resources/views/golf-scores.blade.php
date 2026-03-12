@@ -187,6 +187,9 @@
             }
         });
 
+    const uniqueGolfers = @json($unique_golfers);
+    console.log(uniqueGolfers);
+
 
     </script>
 </x-layout>
