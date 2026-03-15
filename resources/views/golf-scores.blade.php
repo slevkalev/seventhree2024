@@ -173,6 +173,15 @@
 
             searchInput.addEventListener('input', filterGolfers);
 
+            // Darken active golfer background when they've finished (thru = "F")
+            const activeGolferLinks = document.querySelectorAll('.active-golfer-link');
+            activeGolferLinks.forEach(link => {
+                const thruEl = link.querySelector('.active-golfer-thru');
+                if (thruEl && thruEl.textContent.trim().toUpperCase() === 'F') {
+                    link.classList.add('active-golfer-finished');
+                }
+            });
+
             function filterGolfers() {
                 const searchTerm = searchInput.value.toLowerCase();
 

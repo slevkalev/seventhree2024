@@ -886,6 +886,11 @@ input[type="checkbox"]{
     padding: .625em;
   }
 
+  /* Finished Golfer (thru F) */
+  .active-golfer-link.active-golfer-finished {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
   /* Primary Information (Name, Score, Thru) */
   .golfer-info_primary, .active-golfer-info_primary {
     display: flex;
