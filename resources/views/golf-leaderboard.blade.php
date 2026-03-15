@@ -103,7 +103,14 @@
 
 </section>
     <script>
-
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.selected').forEach(entry => {
+                const scoreEl = entry.querySelector('.selected-score');
+                if (scoreEl && scoreEl.textContent.trim() === 'Cut') {
+                    entry.classList.add('selected-cut');
+                }
+            });
+        });
     </script>
 
 </x-layout>

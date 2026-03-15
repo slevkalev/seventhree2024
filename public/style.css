@@ -1060,6 +1060,10 @@ input[type="checkbox"]{
 
 }
 
+.selected.selected-cut {
+    background-color: rgba(247, 46, 46, 0.2);
+}
+
 /* Custom styling for the disclosure triangle */
 details summary::-webkit-details-marker,
 details summary::marker {
