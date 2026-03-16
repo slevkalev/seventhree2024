@@ -987,7 +987,7 @@ input[type="checkbox"]{
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 1.25em;
     overflow: hidden;
-    width: 20em;
+    /* width: 20em; */
 }
 
 /* Entry summary (collapsed view) */
@@ -1024,7 +1024,7 @@ input[type="checkbox"]{
 
 /* Entry selections (expanded view) */
 .entry-selections {
-    padding: 1.3125em 1.25em;
+    padding: 1.3125em 0em;
 }
 
 .selected {
@@ -1041,6 +1041,7 @@ input[type="checkbox"]{
 
 .selected-name {
     font-size: 1rem;
+    padding-left: .5rem;
 }
 
 .selected-score {
