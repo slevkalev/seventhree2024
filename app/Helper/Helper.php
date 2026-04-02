@@ -79,11 +79,14 @@ class Helper
 
         $tournaments =[
             ['tournament_name'=>'The Players Championship','start'=>'3/12/2026', 'end'=>'3/15/2026','current'=>0, 'image'=>'https://res.cloudinary.com/pgatour-prod/d_tournaments:logos:R000.png/tournaments/logos/R011.png'],
-            ['tournament_name'=>'The Masters','start'=>'4/9/2026', 'end'=>'4/12/2026','current'=>1, 'image'=>'https://icon2.cleanpng.com/20180510/xtq/avsyhrlrh.webp'],
+            ['tournament_name'=>'The Masters','start'=>'4/9/2026', 'end'=>'4/12/2026','current'=>1, 'image'=>'https://upload.wikimedia.org/wikipedia/en/2/23/Masters_Logo.png?_=20250526010410'],
             ['tournament_name'=>'The PGA Championship','start'=>'5/14/2026', 'end'=>'5/17/2026','current'=>0, 'image'=>'https://cdn.prod.website-files.com/630fbdaf6751e7b380e52e6e/672cf2ffa0c38e6abdcf8f7d_25CH_Quail_Holllow_4C.png'],
             ['tournament_name'=>'The US Open','start'=>'6/18/2026', 'end'=>'6/21/2026','current'=>0, 'image'=>'./images/usopen2026.png'],
             ['tournament_name'=>'The Open','start'=>'7/16/2026', 'end'=>'7/19/2026','current'=>0, 'image'=>'https://www.theopen.com/-/media/images/logos/TheOpen_Poster.jpg'],
         ];
+
+
+        //'https://icon2.cleanpng.com/20180510/xtq/avsyhrlrh.webp'
 
         // Find the active tournament
         $active = array_filter($tournaments, fn($t) => $t['current'] === 1);
