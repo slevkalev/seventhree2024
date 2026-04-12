@@ -1,3 +1,4 @@
+
 <x-layout>
     <x-slot:heading>
         Golf Pool Leaderboard
@@ -7,12 +8,30 @@
 
 
 
+
     @php
         $start_date = \Carbon\Carbon::createFromFormat('m/d/Y', $tournament['start'])->format('F d');
         $end_date = \Carbon\Carbon::createFromFormat('m/d/Y', $tournament['end'])->format('F d ');
     @endphp
 
+<style>
+  .message {
+    opacity: 1;
+    transition: opacity 1s ease;
+    background: #ee0505;
+    color: white;
+    padding: 12px 16px;
+    display: inline-block;
+    border-radius: 6px;
+    max-width: 20em;
+    margin-bottom:1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  }
 
+  .message.fade-out {
+    opacity: 0;
+  }
+</style>
 
 <section>
     <h1>{{$tournament['tournament_name']}}</h1>
@@ -21,8 +40,8 @@
     <img src="{{ $tournament['image'] }}" alt="{{ $tournament['tournament_name'] }}" height="300px" width="300px">
     <br>
     <br>
+    <div id="message" class="message">PGA Championship Pool starts May 11th -- Enter starting -- May 6th</div>
     <h3 class="inverted">Pool Leaderboard</h3>
-
 
 
 
@@ -111,6 +130,18 @@
                 }
             });
         });
+    </script>
+
+    <script>
+        const message = document.getElementById('message');
+
+        setTimeout(() => {
+            message.classList.add('fade-out');
+        }, 5000);
+
+        setTimeout(() => {
+            message.remove();
+        }, 6000);
     </script>
 
 </x-layout>
