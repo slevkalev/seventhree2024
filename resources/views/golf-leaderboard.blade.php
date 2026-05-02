@@ -40,7 +40,7 @@
     <img src="{{ $tournament['image'] }}" alt="{{ $tournament['tournament_name'] }}" height="300px" width="300px">
     <br>
     <br>
-    <div id="message" class="message">PGA Championship Pool starts May 11th -- Enter starting -- May 6th</div>
+    <div id="message" class="message">US Open starts June 16th -- Enter starting -- June 11th</div>
     <h3 class="inverted">Pool Leaderboard</h3>
 
 
