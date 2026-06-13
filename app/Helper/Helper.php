@@ -37,25 +37,25 @@ class Helper
 
     public static function schedule(){
 
-              return [
-            ['weekId'=> 1, 'start'=> '9/4/2025', 'end'=>'9/8/2025', 'nog'=>16],
-            ['weekId'=> 2, 'start'=> '9/9/2025', 'end'=>'9/15/2025', 'nog'=>16],
-            ['weekId'=> 3, 'start'=> '9/16/2025', 'end'=>'9/22/2025', 'nog'=>16],
-            ['weekId'=> 4, 'start'=> '9/23/2025', 'end'=>'9/29/2025', 'nog'=>16],
-            ['weekId'=> 5, 'start'=> '10/1/2025', 'end'=>'10/7/2025', 'nog'=>14],
-            ['weekId'=> 6, 'start'=> '10/8/2025', 'end'=>'10/14/2025', 'nog'=>15],
-            ['weekId'=> 7, 'start'=> '10/15/2025', 'end'=>'10/21/2025', 'nog'=>15],
-            ['weekId'=> 8, 'start'=> '10/22/2025', 'end'=>'10/28/2025', 'nog'=>13],
-            ['weekId'=> 9, 'start'=> '10/29/2025', 'end'=>'11/4/2025', 'nog'=>14],
-            ['weekId'=> 10, 'start'=> '11/5/2025', 'end'=>'11/11/2025', 'nog'=>14],
-            ['weekId'=> 11, 'start'=> '11/12/2025', 'end'=>'11/18/2025', 'nog'=>15],
-            ['weekId'=> 12, 'start'=> '11/19/2025', 'end'=>'11/25/2025', 'nog'=>14],
-            ['weekId'=> 13, 'start'=> '11/26/2025', 'end'=>'12/2/2025', 'nog'=>16],
-            ['weekId'=> 14, 'start'=> '12/3/2025', 'end'=>'12/9/2025', 'nog'=>14],
-            ['weekId'=> 15, 'start'=> '12/10/2025', 'end'=>'12/16/2025', 'nog'=>16],
-            ['weekId'=> 16, 'start'=> '12/17/2025', 'end'=>'12/22/2025', 'nog'=>16],
-            ['weekId'=> 17, 'start'=> '12/23/2025', 'end'=>'12/30/2025', 'nog'=>16],
-            ['weekId'=> 18, 'start'=> '12/31/2025', 'end'=>'1/5/2026', 'nog'=>16]
+        return [
+                ['weekId'=> 1, 'start'=> '9/9/2026', 'end'=>'9/14/2026', 'nog'=>16],
+                ['weekId'=> 2, 'start'=> '9/15/2026', 'end'=>'9/21/2026', 'nog'=>16],
+                ['weekId'=> 3, 'start'=> '9/22/2026', 'end'=>'9/28/2026', 'nog'=>16],
+                ['weekId'=> 4, 'start'=> '9/23/2026', 'end'=>'9/29/2026', 'nog'=>16],
+                ['weekId'=> 5, 'start'=> '9/29/2026', 'end'=>'10/5/2026', 'nog'=>15],
+                ['weekId'=> 6, 'start'=> '10/12/2026', 'end'=>'10/19/2026', 'nog'=>14],
+                ['weekId'=> 7, 'start'=> '10/15/2026', 'end'=>'10/21/2026', 'nog'=>14],
+                ['weekId'=> 8, 'start'=> '10/20/2026', 'end'=>'10/26/2026', 'nog'=>14],
+                ['weekId'=> 9, 'start'=> '10/27/2026', 'end'=>'11/2/2026', 'nog'=>15],
+                ['weekId'=> 10, 'start'=> '11/3/2026', 'end'=>'11/9/2026', 'nog'=>14],
+                ['weekId'=> 11, 'start'=> '11/10/2026', 'end'=>'11/16/2026', 'nog'=>13],
+                ['weekId'=> 12, 'start'=> '11/17/2026', 'end'=>'11/23/2026', 'nog'=>16],
+                ['weekId'=> 13, 'start'=> '11/24/2026', 'end'=>'11/30/2026', 'nog'=>14],
+                ['weekId'=> 14, 'start'=> '12/1/2026', 'end'=>'12/14/2026', 'nog'=>15],
+                ['weekId'=> 15, 'start'=> '12/15/2026', 'end'=>'12/21/2026', 'nog'=>16],
+                ['weekId'=> 16, 'start'=> '12/22/2026', 'end'=>'12/28/2026', 'nog'=>16],
+                ['weekId'=> 17, 'start'=> '12/29/2026', 'end'=>'1/4/2027', 'nog'=>16],
+                ['weekId'=> 18, 'start'=> '1/11/2027', 'end'=>'1/18/2027', 'nog'=>16]
         ];
     }
 
@@ -80,8 +80,8 @@ class Helper
         $tournaments =[
             ['tournament_name'=>'The Players Championship','start'=>'3/12/2026', 'end'=>'3/15/2026','current'=>0, 'image'=>'https://res.cloudinary.com/pgatour-prod/d_tournaments:logos:R000.png/tournaments/logos/R011.png'],
             ['tournament_name'=>'The Masters','start'=>'4/9/2026', 'end'=>'4/12/2026','current'=>0, 'image'=>'https://upload.wikimedia.org/wikipedia/en/2/23/Masters_Logo.png?_=20250526010410'],
-            ['tournament_name'=>'The PGA Championship','start'=>'5/14/2026', 'end'=>'5/17/2026','current'=>1, 'image'=>'./images/26CH_ARON_4C.png'],
-            ['tournament_name'=>'The US Open','start'=>'6/18/2026', 'end'=>'6/21/2026','current'=>0, 'image'=>'./images/usopen2026.png'],
+            ['tournament_name'=>'The PGA Championship','start'=>'5/14/2026', 'end'=>'5/17/2026','current'=>0, 'image'=>'./images/26CH_ARON_4C.png'],
+            ['tournament_name'=>'The US Open','start'=>'6/18/2026', 'end'=>'6/21/2026','current'=>1, 'image'=>'./images/usopen2026.png'],
             ['tournament_name'=>'The Open','start'=>'7/16/2026', 'end'=>'7/19/2026','current'=>0, 'image'=>'https://www.theopen.com/-/media/images/logos/TheOpen_Poster.jpg'],
         ];
 
