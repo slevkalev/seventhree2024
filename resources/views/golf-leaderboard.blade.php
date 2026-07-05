@@ -40,7 +40,7 @@
     <img src="{{ $tournament['image'] }}" alt="{{ $tournament['tournament_name'] }}" height="300px" width="300px">
     <br>
     <br>
-    <div id="message" class="message">The Open July 12th -- Enter starting -- July 7th</div>
+    <div id="message" class="message">NFL 2026 Football Pool -- register before Sept 9th</div>
     <h3 class="inverted">Pool Leaderboard</h3>
 
 
