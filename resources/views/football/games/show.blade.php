@@ -78,20 +78,20 @@
                     {{$status}} --}}
 
                     @php
-    // Safe parsing using Carbon (handles multiple formats or falls back gracefully)
-    try {
-        $date = \Carbon\Carbon::parse($game->game_date);
-        $dayString = $date->format('D'); // e.g., "Mon"
-    } catch (\Exception $e) {
-        $dayString = 'Unknown'; // Fallback if the date format is completely invalid
-    }
+                    // Safe parsing using Carbon (handles multiple formats or falls back gracefully)
+                        try {
+                            $date = \Carbon\Carbon::parse($game->game_date);
+                            $dayString = $date->format('D'); // e.g., "Mon"
+                        } catch (\Exception $e) {
+                            $dayString = 'Unknown'; // Fallback if the date format is completely invalid
+                        }
 
-    $dateResult = $dayString . " " . $game->game_time;
-    $statusOptions = [$dateResult, "1st", "2nd", "3rd", "4th", "OT", "Final"];
+                        $dateResult = $dayString . " " . $game->game_time;
+                        $statusOptions = [$dateResult, "1st", "2nd", "3rd", "4th", "OT", "Final"];
 
-    // Fallback to "Final" if the status index doesn't exist in your array
-    $status = $statusOptions[$game->game_status] ?? 'Final';
-@endphp
+                        // Fallback to "Final" if the status index doesn't exist in your array
+                        $status = $statusOptions[$game->game_status] ?? 'Final';
+                    @endphp
 
 
 

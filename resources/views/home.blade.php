@@ -10,7 +10,7 @@
     <style>
     .hero-section {
         position: relative;
-        background-image: url("/images/football_pool_2025.jpeg");
+        background-image: url("/images/helmet_2026.jpg");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
