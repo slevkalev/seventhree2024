@@ -62,21 +62,6 @@
             <div class="game-date">
 
 
-                    {{-- @php
-
-                        $dateString =  $game->game_date; // Input date string
-                        $date = DateTime::createFromFormat('m/d/Y', $dateString); // Create DateTime object
-                        $dayString = $date->format('D'); // Format to get the day abbreviation
-
-                        $dateResult = $dayString." ".$game->game_time;
-                        $statusOptions = [$dateResult, "1st", "2nd", "3rd", "4th", "OT", "Final"];
-
-                        $status=$statusOptions[$game->game_status];
-
-                    @endphp
-
-                    {{$status}} --}}
-
                     @php
                     // Safe parsing using Carbon (handles multiple formats or falls back gracefully)
                         try {
@@ -93,7 +78,7 @@
                         $status = $statusOptions[$game->game_status] ?? 'Final';
                     @endphp
 
-
+                        {{$status}}
 
             </div>
 
