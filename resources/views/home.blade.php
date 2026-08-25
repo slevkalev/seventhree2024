@@ -127,7 +127,7 @@
                 <p class="mt-2">
                     Still have questions? Contact the admin or visit our full rules page for more info.
                 </p>
-                <p>COST? - $75 for the season.  Payable prior to Week 1 Game 1 Kickoff (September 4th 8PM)</p>
+                <p>COST? - $75 for the season.  Payable prior to Week 1 Game 1 Kickoff (WEDNESDAY September 9th 8PM)</p>
                 <p>PAYOUT? - To be determined.  It depends on the number of entries.  A table of prizes will be added after the season starts.  each weekly prize is $75 minus $1.50 for etransfer</p>
                 <p>POOL FEE? - etransfer entry fee to jsnelg@gmail.com</p>
                 <p>Provide a valid cell phone number and email address.   Upon winning a week you be texted to confirm the email to e-transfer.</p>
