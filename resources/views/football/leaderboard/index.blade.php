@@ -187,7 +187,7 @@
                     let userFlag = poolUser.id===user.id? "current-user" : ""
                     leftData+= `
                         <div class="row ${userFlag}">
-                            <span class="data-name-span a-left">${poolUser.first_name} ${poolUser.last_name.charAt(0)}</span>
+                            <span class="data-name-span a-left">${poolUser.first_name.charAt(0)} ${poolUser.last_name}</span>
                             <span class="data-total-span">${poolUser.total}</span>
                         </div>
                         `

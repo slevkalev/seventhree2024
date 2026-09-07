@@ -7,10 +7,10 @@ document.addEventListener('DOMContentLoaded', function() {
 })
 
 
-import data from './field.json' with {type: "json"};
+// import data from './field.json' with {type: "json"};
 
-console.log(data)
+// console.log(data)
 
-const jsonString = JSON.stringify(data, null, 2);
+// const jsonString = JSON.stringify(data, null, 2);
 
-console.log(jsonString)
+// console.log(jsonString)

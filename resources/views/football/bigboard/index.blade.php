@@ -37,7 +37,7 @@
 
                 const record = {}
                 record.id = user.id
-                record.name = `${user.first_name} ${user.last_name.charAt(0)}`
+                record.name = `${user.first_name.charAt(0)} ${user.last_name}`
                 record.missed = missed
                 record.total =total
 
