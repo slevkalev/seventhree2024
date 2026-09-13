@@ -65,7 +65,7 @@
                             <span>{{ $game->home_pts }}</span>
                         </div>
                         <div class="game-card-game">
-                            <span>{{$game->game_status == 6? "Final" : "pending"}}</span>
+                            <span class="{{$game->game_status == 6? "is-final" : "pending"}}">{{$game->game_status == 6? "Final" : "pending"}}</span>
                             <span>{{$game->locked == 1? "locked" : "open"}}</span>
                         </div>
                     </div>

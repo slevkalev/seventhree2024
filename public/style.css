@@ -1222,3 +1222,7 @@ p {
 .game:has(> .checkmark){
     background-color: #ccc;
 }
+
+.game-card:has(.is-final){
+    background-color: #ccc;
+}
