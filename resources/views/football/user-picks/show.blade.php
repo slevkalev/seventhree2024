@@ -7,7 +7,7 @@
 
     <h2 class="pad1 center">Your Picks for Week {{ $week }} </h2>
 
-
+<div id="user-picks">
 
     @foreach ($picks as $pick)
 
@@ -83,7 +83,7 @@
     @endforeach
 
 
-    <div id="user-picks"></div>
+    </div>
 
     <script>
         function confirmDelete() {
