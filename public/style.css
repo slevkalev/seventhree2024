@@ -402,7 +402,7 @@ h3 {
 
 .game-date {
     font-size: .875rem; /* Size for the date */
-    color: #555; /* Color for the date text */
+    color:#000; /* Color for the date text */
 }
 
 .checkmark{
@@ -1217,4 +1217,8 @@ p {
     margin-left: auto;
     margin-right: auto;
     max-width: 400px;
+}
+
+.game:has(> .checkmark){
+    background-color: #ccc;
 }
