@@ -5,7 +5,7 @@
 
 <section>
 
-    <h1 class="center pad1">Pick for Game {{ $game->id }}</h1>
+    <h1 class="center">Pick for Game {{ $game->id }}</h1>
 
     <form class="border1" id="pick-form" method="POST" action="/user-picks">
         @csrf
