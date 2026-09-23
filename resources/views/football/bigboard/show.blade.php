@@ -158,7 +158,7 @@
             usersWithTotal.forEach(user=>{
                 let userFlag = user.id === currentUser.id? "current-user" : ""
                 let aiFlag = user.id === 75? "ai-user" : ""
-                leftData += `<div class="row ${userFlag}">
+                leftData += `<div class="row ${userFlag} ${aiFlag}">
                         <span class="data-name-span">${user.first_name.charAt(0)} ${user.last_name}</span>
                         <span class="data-total-span">${user.total}</span>
                         <span class="data-missed-span">${user.missed}</span>
