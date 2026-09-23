@@ -185,7 +185,10 @@
         let rightData = `<div class="right-data">`
             usersWithTotal.forEach(user=>{
                 let userFlag = user.id === currentUser.id? "current-user" : ""
-                rightData += `<div class="row ${userFlag}">`
+                let aiFlag = user.id === 75? "ai-user" : ""
+                rightData += `<div class="row ${userFlag} ${aiFlag}">`
+
+
 
 
                 for(let i = 0; i < numberOfGames; i++){
