@@ -28,7 +28,7 @@
         </x-form-field>
 
 
-        <x-form-button>Submit</x-form-button>
+        <x-form-button style="margin: 3em 0 0">Submit</x-form-button>
         <div class="m-ba">
             {{-- <a href="#" class="link">Forgot Password</a> --}}
             <a href="/register" class="link">Create Account</a>
